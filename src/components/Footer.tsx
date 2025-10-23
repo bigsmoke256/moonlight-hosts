@@ -1,0 +1,113 @@
+import { Link } from "react-router-dom";
+import { Mail, Phone, MapPin } from "lucide-react";
+
+const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
+  return (
+    <footer className="bg-primary text-primary-foreground border-t border-accent/10">
+      <div className="container mx-auto px-4 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          {/* Brand */}
+          <div className="space-y-4">
+            <h3 className="text-2xl font-heading font-bold">
+              <span className="text-accent">Moon</span> Light
+            </h3>
+            <p className="text-sm text-muted-foreground">
+              Graceful welcomes. Lasting impressions.
+            </p>
+            <div className="flex space-x-4">
+              <a
+                href="https://wa.me/yourwhatsappnumber"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-accent hover:text-accent/80 transition-colors"
+              >
+                WhatsApp
+              </a>
+              <a
+                href="https://www.tiktok.com/@youraccount"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-accent hover:text-accent/80 transition-colors"
+              >
+                TikTok
+              </a>
+              <a
+                href="https://www.instagram.com/youraccount"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-accent hover:text-accent/80 transition-colors"
+              >
+                Instagram
+              </a>
+            </div>
+          </div>
+
+          {/* Quick Links */}
+          <div>
+            <h4 className="font-heading font-semibold mb-4 text-accent">Quick Links</h4>
+            <ul className="space-y-2">
+              <li>
+                <Link to="/" className="text-sm hover:text-accent transition-colors">
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link to="/about" className="text-sm hover:text-accent transition-colors">
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link to="/services" className="text-sm hover:text-accent transition-colors">
+                  Services
+                </Link>
+              </li>
+              <li>
+                <Link to="/gallery" className="text-sm hover:text-accent transition-colors">
+                  Gallery
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Services */}
+          <div>
+            <h4 className="font-heading font-semibold mb-4 text-accent">Our Services</h4>
+            <ul className="space-y-2 text-sm">
+              <li>Wedding Ceremonies</li>
+              <li>Corporate Events</li>
+              <li>Birthday Parties</li>
+              <li>Conferences</li>
+            </ul>
+          </div>
+
+          {/* Contact */}
+          <div>
+            <h4 className="font-heading font-semibold mb-4 text-accent">Contact Us</h4>
+            <ul className="space-y-3">
+              <li className="flex items-start space-x-2 text-sm">
+                <Phone className="w-4 h-4 mt-1 text-accent" />
+                <span>+256 XXX XXX XXX</span>
+              </li>
+              <li className="flex items-start space-x-2 text-sm">
+                <Mail className="w-4 h-4 mt-1 text-accent" />
+                <span>info@moonlighthosts.com</span>
+              </li>
+              <li className="flex items-start space-x-2 text-sm">
+                <MapPin className="w-4 h-4 mt-1 text-accent" />
+                <span>Kampala, Uganda</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="border-t border-accent/10 mt-8 pt-8 text-center text-sm text-muted-foreground">
+          <p>© {currentYear} Moon Light Hosts. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
