@@ -18,7 +18,7 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               <a
-                href="https://wa.me/yourwhatsappnumber"
+                href="https://wa.me/256703140409"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-accent hover:text-accent/80 transition-colors"
@@ -26,7 +26,7 @@ const Footer = () => {
                 WhatsApp
               </a>
               <a
-                href="https://www.tiktok.com/@youraccount"
+                href="https://www.tiktok.com/@moonlighthosts"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-accent hover:text-accent/80 transition-colors"
@@ -34,7 +34,7 @@ const Footer = () => {
                 TikTok
               </a>
               <a
-                href="https://www.instagram.com/youraccount"
+                href="https://www.instagram.com/moonlighthosts"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-accent hover:text-accent/80 transition-colors"
@@ -88,11 +88,19 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-start space-x-2 text-sm">
                 <Phone className="w-4 h-4 mt-1 text-accent" />
-                <span>+256 XXX XXX XXX</span>
+                <a href="tel:+256703140409" className="hover:text-accent transition-colors">0703 140 409</a>
+              </li>
+              <li className="flex items-start space-x-2 text-sm">
+                <Phone className="w-4 h-4 mt-1 text-accent" />
+                <a href="tel:+256773179969" className="hover:text-accent transition-colors">0773 179 969</a>
               </li>
               <li className="flex items-start space-x-2 text-sm">
                 <Mail className="w-4 h-4 mt-1 text-accent" />
-                <span>info@moonlighthosts.com</span>
+                <a href="mailto:matamabrenda@gmail.com" className="hover:text-accent transition-colors">matamabrenda@gmail.com</a>
+              </li>
+              <li className="flex items-start space-x-2 text-sm">
+                <Mail className="w-4 h-4 mt-1 text-accent" />
+                <a href="mailto:kobusingbarbara89@gmail.com" className="hover:text-accent transition-colors">kobusingbarbara89@gmail.com</a>
               </li>
               <li className="flex items-start space-x-2 text-sm">
                 <MapPin className="w-4 h-4 mt-1 text-accent" />

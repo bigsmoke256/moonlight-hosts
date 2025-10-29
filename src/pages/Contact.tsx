@@ -22,7 +22,7 @@ const Contact = () => {
     e.preventDefault();
     
     // Create mailto link
-    const mailtoLink = `mailto:info@moonlighthosts.com?subject=${encodeURIComponent(
+    const mailtoLink = `mailto:matamabrenda@gmail.com,kobusingbarbara89@gmail.com?subject=${encodeURIComponent(
       formData.subject
     )}&body=${encodeURIComponent(
       `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
@@ -140,12 +140,20 @@ const Contact = () => {
                   <p className="text-muted-foreground text-sm mb-2">
                     Available Monday - Saturday, 8am - 8pm
                   </p>
-                  <a
-                    href="tel:+256XXXXXXXXX"
-                    className="text-accent hover:underline font-semibold"
-                  >
-                    +256 XXX XXX XXX
-                  </a>
+                  <div className="space-y-1">
+                    <a
+                      href="tel:+256703140409"
+                      className="text-accent hover:underline font-semibold block"
+                    >
+                      0703 140 409
+                    </a>
+                    <a
+                      href="tel:+256773179969"
+                      className="text-accent hover:underline font-semibold block"
+                    >
+                      0773 179 969
+                    </a>
+                  </div>
                 </CardContent>
               </Card>
 
@@ -156,12 +164,20 @@ const Contact = () => {
                   <p className="text-muted-foreground text-sm mb-2">
                     We'll respond within 24 hours
                   </p>
-                  <a
-                    href="mailto:info@moonlighthosts.com"
-                    className="text-accent hover:underline font-semibold"
-                  >
-                    info@moonlighthosts.com
-                  </a>
+                  <div className="space-y-1">
+                    <a
+                      href="mailto:matamabrenda@gmail.com"
+                      className="text-accent hover:underline font-semibold block text-sm"
+                    >
+                      matamabrenda@gmail.com
+                    </a>
+                    <a
+                      href="mailto:kobusingbarbara89@gmail.com"
+                      className="text-accent hover:underline font-semibold block text-sm"
+                    >
+                      kobusingbarbara89@gmail.com
+                    </a>
+                  </div>
                 </CardContent>
               </Card>
 
@@ -184,7 +200,7 @@ const Contact = () => {
                   <h3 className="text-xl font-heading font-semibold mb-3">Connect With Us</h3>
                   <div className="space-y-2">
                     <a
-                      href="https://wa.me/yourwhatsappnumber"
+                      href="https://wa.me/256703140409"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="block hover:underline"
@@ -192,7 +208,7 @@ const Contact = () => {
                       WhatsApp
                     </a>
                     <a
-                      href="https://www.tiktok.com/@youraccount"
+                      href="https://www.tiktok.com/@moonlighthosts"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="block hover:underline"
@@ -200,7 +216,7 @@ const Contact = () => {
                       TikTok
                     </a>
                     <a
-                      href="https://www.instagram.com/youraccount"
+                      href="https://www.instagram.com/moonlighthosts"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="block hover:underline"
@@ -208,10 +224,16 @@ const Contact = () => {
                       Instagram
                     </a>
                     <a
-                      href="mailto:info@moonlighthosts.com"
+                      href="mailto:matamabrenda@gmail.com"
                       className="block hover:underline"
                     >
-                      Gmail
+                      Gmail (Brenda)
+                    </a>
+                    <a
+                      href="mailto:kobusingbarbara89@gmail.com"
+                      className="block hover:underline"
+                    >
+                      Gmail (Barbara)
                     </a>
                   </div>
                 </CardContent>

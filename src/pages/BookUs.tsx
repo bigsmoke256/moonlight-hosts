@@ -45,7 +45,7 @@ Guest Count: ${formData.guestCount}
 Message: ${formData.message}
     `.trim();
 
-    const whatsappUrl = `https://wa.me/yourwhatsappnumber?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/256703140409?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, "_blank");
 
     toast({
@@ -247,14 +247,22 @@ Message: ${formData.message}
                   <Phone className="w-10 h-10 mb-4" />
                   <h3 className="text-xl font-heading font-semibold mb-2">Prefer to Call?</h3>
                   <p className="text-sm mb-3">We're available on WhatsApp</p>
-                  <a
-                    href="https://wa.me/yourwhatsappnumber"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sm font-semibold underline"
-                  >
-                    +256 XXX XXX XXX
-                  </a>
+                  <div className="space-y-1">
+                    <a
+                      href="https://wa.me/256703140409"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm font-semibold underline block"
+                    >
+                      0703 140 409
+                    </a>
+                    <a
+                      href="tel:+256773179969"
+                      className="text-sm font-semibold underline block"
+                    >
+                      0773 179 969
+                    </a>
+                  </div>
                 </CardContent>
               </Card>
             </div>
