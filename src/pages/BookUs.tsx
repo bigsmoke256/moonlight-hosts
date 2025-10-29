@@ -15,6 +15,21 @@ import { Calendar, Users, MapPin, Phone } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { useToast } from "@/hooks/use-toast";
+import { z } from "zod";
+
+const bookingSchema = z.object({
+  name: z.string().trim().min(1, "Name is required").max(100, "Name must be less than 100 characters"),
+  email: z.string().trim().email("Invalid email address").max(255, "Email must be less than 255 characters"),
+  phone: z.string().trim().min(1, "Phone number is required").regex(/^\+?256[0-9]{9}$|^0[0-9]{9}$/, "Invalid Uganda phone number format"),
+  eventType: z.string().min(1, "Event type is required"),
+  eventDate: z.string().min(1, "Event date is required"),
+  location: z.string().trim().min(1, "Location is required").max(200, "Location must be less than 200 characters"),
+  guestCount: z.string().refine((val) => {
+    const num = parseInt(val, 10);
+    return !isNaN(num) && num >= 1 && num <= 10000;
+  }, "Guest count must be between 1 and 10,000"),
+  message: z.string().max(1000, "Message must be less than 1000 characters"),
+});
 
 const BookUs = () => {
   const { toast } = useToast();
@@ -32,26 +47,41 @@ const BookUs = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Create WhatsApp message
-    const message = `
+    // Validate form data
+    try {
+      const validatedData = bookingSchema.parse(formData);
+      
+      // Create WhatsApp message with validated data
+      const message = `
 *New Booking Request*
-Name: ${formData.name}
-Email: ${formData.email}
-Phone: ${formData.phone}
-Event Type: ${formData.eventType}
-Event Date: ${formData.eventDate}
-Location: ${formData.location}
-Guest Count: ${formData.guestCount}
-Message: ${formData.message}
-    `.trim();
+Name: ${validatedData.name}
+Email: ${validatedData.email}
+Phone: ${validatedData.phone}
+Event Type: ${validatedData.eventType}
+Event Date: ${validatedData.eventDate}
+Location: ${validatedData.location}
+Guest Count: ${validatedData.guestCount}
+Message: ${validatedData.message}
+      `.trim();
 
-    const whatsappUrl = `https://wa.me/256703140409?text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, "_blank");
+      const whatsappUrl = `https://wa.me/256703140409?text=${encodeURIComponent(message)}`;
+      window.open(whatsappUrl, "_blank");
 
-    toast({
-      title: "Request Sent!",
-      description: "We'll get back to you shortly via WhatsApp.",
-    });
+      toast({
+        title: "Request Sent!",
+        description: "We'll get back to you shortly via WhatsApp.",
+      });
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        // Display the first validation error
+        const firstError = error.errors[0];
+        toast({
+          title: "Validation Error",
+          description: firstError.message,
+          variant: "destructive",
+        });
+      }
+    }
   };
 
   const handleChange = (field: string, value: string) => {
