@@ -3,6 +3,9 @@ import { Target, Eye, Award } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import aboutTeam from "@/assets/about-team.jpg";
+import founder1 from "@/assets/founder-1.jpg";
+import founder2 from "@/assets/founder-2.jpg";
+import foundersTeam from "@/assets/founders-team.jpg";
 
 const About = () => {
   const values = [
@@ -109,8 +112,56 @@ const About = () => {
         </div>
       </section>
 
-      {/* Core Values */}
+      {/* Founders Section */}
       <section className="section-padding">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16 animate-fade-in">
+            <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4">
+              Meet Our <span className="text-gradient-gold">Founders</span>
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              The visionary leaders behind Moon Light Hosts
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            <Card className="luxury-border hover-lift animate-fade-in overflow-hidden">
+              <CardContent className="p-0">
+                <img
+                  src={founder1}
+                  alt="Co-Founder - Moon Light Hosts"
+                  className="w-full h-auto"
+                />
+              </CardContent>
+            </Card>
+
+            <Card className="luxury-border hover-lift animate-fade-in overflow-hidden" style={{ animationDelay: "0.1s" }}>
+              <CardContent className="p-0">
+                <img
+                  src={founder2}
+                  alt="Co-Founder - Moon Light Hosts"
+                  className="w-full h-auto"
+                />
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="max-w-4xl mx-auto animate-fade-in" style={{ animationDelay: "0.2s" }}>
+            <Card className="luxury-border hover-lift overflow-hidden">
+              <CardContent className="p-0">
+                <img
+                  src={foundersTeam}
+                  alt="Moon Light Hosts Founders"
+                  className="w-full h-auto"
+                />
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Core Values */}
+      <section className="section-padding bg-muted">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16 animate-fade-in">
             <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4">
