@@ -8,6 +8,7 @@ import heroImage from "@/assets/hero-image.jpg";
 import weddingService from "@/assets/wedding-service.jpg";
 import conferenceService from "@/assets/conference-service.jpg";
 import birthdayService from "@/assets/birthday-service.jpg";
+import foundersTeam from "@/assets/founders-team.jpg";
 
 const Index = () => {
   const services = [
@@ -139,6 +140,32 @@ const Index = () => {
                 </CardContent>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Founders Section */}
+      <section className="section-padding bg-background">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16 animate-fade-in">
+            <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4">
+              Meet Our <span className="text-gradient-gold">Founders</span>
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              The visionary leaders bringing world-class hospitality to Uganda.
+            </p>
+          </div>
+
+          <div className="max-w-3xl mx-auto animate-fade-in">
+            <Card className="luxury-border hover-lift overflow-hidden">
+              <CardContent className="p-0">
+                <img
+                  src={foundersTeam}
+                  alt="Moon Light Hosts Founders"
+                  className="w-full h-auto"
+                />
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
