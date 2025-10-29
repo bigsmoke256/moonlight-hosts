@@ -8,7 +8,7 @@ import heroImage from "@/assets/hero-image.jpg";
 import weddingService from "@/assets/wedding-service.jpg";
 import conferenceService from "@/assets/conference-service.jpg";
 import birthdayService from "@/assets/birthday-service.jpg";
-import foundersTeam from "@/assets/founders-team.jpg";
+import foundersTeam from "@/assets/team-photo-1.jpg";
 
 const Index = () => {
   const services = [
