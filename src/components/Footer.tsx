@@ -34,7 +34,7 @@ const Footer = () => {
                 TikTok
               </a>
               <a
-                href="https://www.instagram.com/moonlighthosts"
+                href="https://www.instagram.com/moonlighthosts256/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-accent hover:text-accent/80 transition-colors"
