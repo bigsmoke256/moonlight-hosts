@@ -2,8 +2,10 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Target, Eye, Award } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import aboutTeam from "@/assets/team-photo-2.jpg";
-import foundersTeam from "@/assets/team-photo-1.jpg";
+import aboutTeam from "@/assets/about-team.jpg";
+import founder1 from "@/assets/founder-1.jpg";
+import founder2 from "@/assets/founder-2.jpg";
+import foundersTeam from "@/assets/founders-team.jpg";
 
 const About = () => {
   const values = [
@@ -122,7 +124,29 @@ const About = () => {
             </p>
           </div>
 
-          <div className="max-w-4xl mx-auto animate-fade-in">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            <Card className="luxury-border hover-lift animate-fade-in overflow-hidden">
+              <CardContent className="p-0">
+                <img
+                  src={founder1}
+                  alt="Co-Founder - Moon Light Hosts"
+                  className="w-full h-auto"
+                />
+              </CardContent>
+            </Card>
+
+            <Card className="luxury-border hover-lift animate-fade-in overflow-hidden" style={{ animationDelay: "0.1s" }}>
+              <CardContent className="p-0">
+                <img
+                  src={founder2}
+                  alt="Co-Founder - Moon Light Hosts"
+                  className="w-full h-auto"
+                />
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="max-w-4xl mx-auto animate-fade-in" style={{ animationDelay: "0.2s" }}>
             <Card className="luxury-border hover-lift overflow-hidden">
               <CardContent className="p-0">
                 <img
