@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin, Instagram, Music, MessageCircle } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -21,25 +21,31 @@ const Footer = () => {
                 href="https://www.instagram.com/moonlighthosts256/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-accent hover:text-accent/80 transition-colors"
+                className="flex items-center gap-2 text-accent hover:text-accent/80 transition-colors"
+                aria-label="Follow us on Instagram"
               >
-                Instagram
+                <Instagram className="w-5 h-5" />
+                <span>Instagram</span>
               </a>
               <a
                 href="https://www.tiktok.com/@moonlighthosts256"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-accent hover:text-accent/80 transition-colors"
+                className="flex items-center gap-2 text-accent hover:text-accent/80 transition-colors"
+                aria-label="Follow us on TikTok"
               >
-                TikTok
+                <Music className="w-5 h-5" />
+                <span>TikTok</span>
               </a>
               <a
                 href="https://wa.me/256703140409"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-accent hover:text-accent/80 transition-colors"
+                className="flex items-center gap-2 text-accent hover:text-accent/80 transition-colors"
+                aria-label="Chat with us on WhatsApp"
               >
-                WhatsApp
+                <MessageCircle className="w-5 h-5" />
+                <span>WhatsApp</span>
               </a>
             </div>
           </div>
