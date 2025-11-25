@@ -2,24 +2,25 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import weddingService from "@/assets/wedding-service.jpg";
-import conferenceService from "@/assets/conference-service.jpg";
-import birthdayService from "@/assets/birthday-service.jpg";
-import aboutTeam from "@/assets/about-team.jpg";
-import heroImage from "@/assets/hero-image.jpg";
+import galleryWelcome from "@/assets/gallery-welcome-sign.jpg";
+import galleryUmbrella from "@/assets/gallery-team-umbrella.jpg";
+import gallerySolo from "@/assets/gallery-host-solo.jpg";
+import galleryThree from "@/assets/gallery-team-three.jpg";
+import galleryOutdoor from "@/assets/gallery-team-outdoor.jpg";
+import galleryProfessional from "@/assets/gallery-team-professional.jpg";
 
 const Gallery = () => {
   const [activeFilter, setActiveFilter] = useState("all");
 
   const images = [
-    { src: weddingService, category: "wedding", title: "Elegant Wedding Ceremony" },
-    { src: conferenceService, category: "corporate", title: "Corporate Conference" },
-    { src: birthdayService, category: "party", title: "Birthday Celebration" },
-    { src: aboutTeam, category: "team", title: "Our Professional Team" },
-    { src: heroImage, category: "wedding", title: "Grand Entrance" },
-    { src: weddingService, category: "wedding", title: "Wedding Reception" },
-    { src: conferenceService, category: "corporate", title: "Business Meeting" },
-    { src: birthdayService, category: "party", title: "Party Hosting" },
+    { src: galleryWelcome, category: "team", title: "Welcome Service Excellence" },
+    { src: galleryUmbrella, category: "team", title: "Professional Host Team" },
+    { src: gallerySolo, category: "team", title: "Dedicated Host Service" },
+    { src: galleryThree, category: "team", title: "Expert Event Hosts" },
+    { src: galleryOutdoor, category: "team", title: "Outdoor Event Specialists" },
+    { src: galleryProfessional, category: "team", title: "Professional Event Team" },
+    { src: galleryWelcome, category: "team", title: "Moonlight Hosts Welcome" },
+    { src: galleryUmbrella, category: "team", title: "Premium Hosting Service" },
   ];
 
   const filters = [
