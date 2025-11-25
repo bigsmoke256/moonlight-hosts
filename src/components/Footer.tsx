@@ -26,7 +26,7 @@ const Footer = () => {
                 WhatsApp
               </a>
               <a
-                href="https://www.tiktok.com/@moonlighthosts"
+                href="https://www.tiktok.com/@moonlighthosts256"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-accent hover:text-accent/80 transition-colors"
