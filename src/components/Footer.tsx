@@ -18,12 +18,12 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               <a
-                href="https://wa.me/256703140409"
+                href="https://www.instagram.com/moonlighthosts256/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-accent hover:text-accent/80 transition-colors"
               >
-                WhatsApp
+                Instagram
               </a>
               <a
                 href="https://www.tiktok.com/@moonlighthosts256"
@@ -34,12 +34,12 @@ const Footer = () => {
                 TikTok
               </a>
               <a
-                href="https://www.instagram.com/moonlighthosts256/"
+                href="https://wa.me/256703140409"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-accent hover:text-accent/80 transition-colors"
               >
-                Instagram
+                WhatsApp
               </a>
             </div>
           </div>
