@@ -16,35 +16,35 @@ const Footer = () => {
             <p className="text-sm text-muted-foreground">
               Graceful welcomes. Lasting impressions.
             </p>
-            <div className="flex space-x-4">
+            <div className="flex flex-col gap-3">
               <a
                 href="https://www.instagram.com/moonlighthosts256/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-accent hover:text-accent/80 transition-colors"
+                className="flex items-center gap-2 text-accent hover:text-accent/80 transition-colors w-fit"
                 aria-label="Follow us on Instagram"
               >
-                <Instagram className="w-5 h-5" />
+                <Instagram className="w-5 h-5 flex-shrink-0" />
                 <span>Instagram</span>
               </a>
               <a
                 href="https://www.tiktok.com/@moonlighthosts256"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-accent hover:text-accent/80 transition-colors"
+                className="flex items-center gap-2 text-accent hover:text-accent/80 transition-colors w-fit"
                 aria-label="Follow us on TikTok"
               >
-                <Music className="w-5 h-5" />
+                <Music className="w-5 h-5 flex-shrink-0" />
                 <span>TikTok</span>
               </a>
               <a
                 href="https://wa.me/256703140409"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-accent hover:text-accent/80 transition-colors"
+                className="flex items-center gap-2 text-accent hover:text-accent/80 transition-colors w-fit"
                 aria-label="Chat with us on WhatsApp"
               >
-                <MessageCircle className="w-5 h-5" />
+                <MessageCircle className="w-5 h-5 flex-shrink-0" />
                 <span>WhatsApp</span>
               </a>
             </div>
