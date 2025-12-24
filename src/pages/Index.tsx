@@ -8,7 +8,7 @@ import heroImage from "@/assets/hero-image.jpg";
 import weddingService from "@/assets/wedding-service.jpg";
 import conferenceService from "@/assets/conference-service.jpg";
 import birthdayService from "@/assets/birthday-service.jpg";
-import foundersTeam from "@/assets/founders-team.jpg";
+import teamMain from "@/assets/team-main.jpg";
 
 const Index = () => {
   const services = [
@@ -144,28 +144,98 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Founders Section */}
+      {/* Our Team Section */}
       <section className="section-padding bg-background">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16 animate-fade-in">
+          <div className="text-center mb-12 animate-fade-in">
             <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4">
-              Meet Our <span className="text-gradient-gold">Founders</span>
+              Welcome to <span className="text-gradient-gold">Moonlight Hosts</span>
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              The visionary leaders bringing world-class hospitality to Uganda.
-            </p>
           </div>
 
-          <div className="max-w-3xl mx-auto animate-fade-in">
-            <Card className="luxury-border hover-lift overflow-hidden">
-              <CardContent className="p-0">
-                <img
-                  src={foundersTeam}
-                  alt="Moon Light Hosts Founders"
-                  className="w-full h-auto"
-                />
-              </CardContent>
-            </Card>
+          <div className="max-w-5xl mx-auto">
+            {/* Team Image */}
+            <div className="mb-12 animate-fade-in">
+              <Card className="luxury-border hover-lift overflow-hidden">
+                <CardContent className="p-0">
+                  <img
+                    src={teamMain}
+                    alt="Moonlight Hosts Team"
+                    className="w-full h-auto"
+                  />
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* About Content */}
+            <div className="space-y-10 text-center md:text-left">
+              <div className="animate-fade-in">
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  At Moonlight Hosts, we don't just serve events—we craft experiences that linger in the hearts of your guests. From the moment attendees arrive, our mission is clear: to deliver service that's seamless, professional, and unforgettable. Our team is a collective of trained hosts, event coordinators, and hospitality experts who live and breathe excellence, energy, and meticulous attention to detail. Every gesture, every smile, every interaction is carefully crafted to leave a lasting impression and elevate your event beyond expectations.
+                </p>
+              </div>
+
+              <div className="animate-fade-in">
+                <h3 className="text-2xl md:text-3xl font-heading font-bold mb-4">
+                  Who <span className="text-gradient-gold">We Are</span>
+                </h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  We are a team of dedicated professionals united by a passion for hospitality and high-standard service. Our hosts are more than just attendants—they are the heartbeat of every event. From greeting guests with warmth to anticipating needs before they are voiced, we ensure that every moment flows smoothly. At Moonlight Hosts, it's not just about serving—it's about creating an atmosphere of comfort, sophistication, and elegance where every guest feels valued and every interaction counts.
+                </p>
+              </div>
+
+              <div className="animate-fade-in">
+                <h3 className="text-2xl md:text-3xl font-heading font-bold mb-4">
+                  What <span className="text-gradient-gold">We Do</span>
+                </h3>
+                <p className="text-muted-foreground leading-relaxed mb-6">
+                  From breakfast meetings and luncheon gatherings to large-scale weddings, corporate events, and private celebrations, Moonlight Hosts brings precision, style, and care to every occasion. Our services include:
+                </p>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
+                  <div className="p-4 rounded-lg bg-muted/50 luxury-border">
+                    <h4 className="font-heading font-semibold text-accent mb-2">Attentive Guest Service</h4>
+                    <p className="text-sm text-muted-foreground">Every guest is treated with respect, courtesy, and professionalism.</p>
+                  </div>
+                  <div className="p-4 rounded-lg bg-muted/50 luxury-border">
+                    <h4 className="font-heading font-semibold text-accent mb-2">Event Coordination & Hosting</h4>
+                    <p className="text-sm text-muted-foreground">We keep your event flowing effortlessly, handling logistics and timing behind the scenes.</p>
+                  </div>
+                  <div className="p-4 rounded-lg bg-muted/50 luxury-border">
+                    <h4 className="font-heading font-semibold text-accent mb-2">VIP Experiences</h4>
+                    <p className="text-sm text-muted-foreground">Exclusivity, comfort, and personalized attention for distinguished guests.</p>
+                  </div>
+                  <div className="p-4 rounded-lg bg-muted/50 luxury-border">
+                    <h4 className="font-heading font-semibold text-accent mb-2">Beverage & Catering Service</h4>
+                    <p className="text-sm text-muted-foreground">Drinks, meals, and treats delivered with style, grace, and impeccable timing.</p>
+                  </div>
+                  <div className="p-4 rounded-lg bg-muted/50 luxury-border md:col-span-2">
+                    <h4 className="font-heading font-semibold text-accent mb-2">Ambience Management</h4>
+                    <p className="text-sm text-muted-foreground">Lighting, seating arrangements, and subtle details that enhance the overall experience.</p>
+                  </div>
+                </div>
+                <p className="text-muted-foreground leading-relaxed mt-6">
+                  We pride ourselves on anticipating every need, solving challenges before they arise, and creating an environment where both hosts and guests feel empowered to enjoy the moment.
+                </p>
+              </div>
+
+              <div className="animate-fade-in">
+                <h3 className="text-2xl md:text-3xl font-heading font-bold mb-4">
+                  Our <span className="text-gradient-gold">Promise</span>
+                </h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Moonlight Hosts is more than a team—it's a benchmark for excellence in hospitality. We promise professionalism, consistency, and service that exceeds expectations. Whether you're celebrating a milestone, hosting a corporate event, or planning a private gathering, we make every guest feel valued, every detail perfect, and every moment memorable.
+                </p>
+              </div>
+
+              <div className="animate-fade-in bg-gradient-to-r from-accent/10 to-accent/5 p-8 rounded-lg luxury-border">
+                <h3 className="text-2xl md:text-3xl font-heading font-bold mb-4">
+                  Join <span className="text-gradient-gold">Us</span>
+                </h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Step into a world where service meets sophistication, where every detail matters, and where every guest is part of a story crafted with care. Let Moonlight Hosts transform your event into an experience that will be remembered, talked about, and cherished long after the last guest departs. Your vision, our expertise—together, we create memories that shine.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
