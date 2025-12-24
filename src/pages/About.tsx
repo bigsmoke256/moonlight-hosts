@@ -2,32 +2,25 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Target, Eye, Award } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import galleryTeamFull from "@/assets/gallery-team-full.jpg";
-import galleryRedVests from "@/assets/gallery-red-vests.jpg";
-import galleryRedDresses from "@/assets/gallery-red-dresses.jpg";
-import galleryMixedFormal from "@/assets/gallery-mixed-formal.jpg";
-
+import aboutTeam from "@/assets/about-team.jpg";
+import founder1 from "@/assets/founder-1.jpg";
+import founder2 from "@/assets/founder-2.jpg";
+import foundersTeam from "@/assets/founders-team.jpg";
 const About = () => {
-  const values = [
-    {
-      icon: <Award className="w-8 h-8 text-accent" />,
-      title: "Luxury",
-      description: "We deliver premium service that exceeds expectations at every turn.",
-    },
-    {
-      icon: <Target className="w-8 h-8 text-accent" />,
-      title: "Professionalism",
-      description: "Our trained team maintains the highest standards of hospitality.",
-    },
-    {
-      icon: <Eye className="w-8 h-8 text-accent" />,
-      title: "Grace",
-      description: "Elegant, warm welcomes that create lasting impressions.",
-    },
-  ];
-
-  return (
-    <div className="min-h-screen">
+  const values = [{
+    icon: <Award className="w-8 h-8 text-accent" />,
+    title: "Luxury",
+    description: "We deliver premium service that exceeds expectations at every turn."
+  }, {
+    icon: <Target className="w-8 h-8 text-accent" />,
+    title: "Professionalism",
+    description: "Our trained team maintains the highest standards of hospitality."
+  }, {
+    icon: <Eye className="w-8 h-8 text-accent" />,
+    title: "Grace",
+    description: "Elegant, warm welcomes that create lasting impressions."
+  }];
+  return <div className="min-h-screen">
       <Navigation />
 
       {/* Hero Section */}
@@ -49,11 +42,7 @@ const About = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="animate-fade-in">
-              <img
-                src={galleryTeamFull}
-                alt="Moonlight Hosts Team"
-                className="rounded-lg shadow-2xl w-full h-auto"
-              />
+              <img src={aboutTeam} alt="Moon Light Hosts Team" className="rounded-lg shadow-2xl w-full h-auto" />
             </div>
             <div className="animate-fade-in-up">
               <h2 className="text-4xl font-heading font-bold mb-6">
@@ -97,7 +86,9 @@ const About = () => {
               </CardContent>
             </Card>
 
-            <Card className="luxury-border hover-lift animate-fade-in" style={{ animationDelay: "0.1s" }}>
+            <Card className="luxury-border hover-lift animate-fade-in" style={{
+            animationDelay: "0.1s"
+          }}>
               <CardContent className="p-8">
                 <Eye className="w-12 h-12 text-accent mb-4" />
                 <h3 className="text-2xl font-heading font-bold mb-4">Our Vision</h3>
@@ -119,41 +110,31 @@ const About = () => {
             <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4">
               Meet Our <span className="text-gradient-gold">Founders</span>
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              The visionary leaders behind Moon Light Hosts
-            </p>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">The visionary people behind Moon Light Hosts</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
             <Card className="luxury-border hover-lift animate-fade-in overflow-hidden">
               <CardContent className="p-0">
-                <img
-                  src={galleryRedVests}
-                  alt="Moonlight Hosts Red Vests Team"
-                  className="w-full h-auto"
-                />
+                <img src={founder1} alt="Co-Founder - Moon Light Hosts" className="w-full h-auto" />
               </CardContent>
             </Card>
 
-            <Card className="luxury-border hover-lift animate-fade-in overflow-hidden" style={{ animationDelay: "0.1s" }}>
+            <Card className="luxury-border hover-lift animate-fade-in overflow-hidden" style={{
+            animationDelay: "0.1s"
+          }}>
               <CardContent className="p-0">
-                <img
-                  src={galleryRedDresses}
-                  alt="Moonlight Hosts Elegant Team"
-                  className="w-full h-auto"
-                />
+                <img src={founder2} alt="Co-Founder - Moon Light Hosts" className="w-full h-auto" />
               </CardContent>
             </Card>
           </div>
 
-          <div className="max-w-4xl mx-auto animate-fade-in" style={{ animationDelay: "0.2s" }}>
+          <div className="max-w-4xl mx-auto animate-fade-in" style={{
+          animationDelay: "0.2s"
+        }}>
             <Card className="luxury-border hover-lift overflow-hidden">
               <CardContent className="p-0">
-                <img
-                  src={galleryMixedFormal}
-                  alt="Moonlight Hosts Full Team"
-                  className="w-full h-auto"
-                />
+                <img src={foundersTeam} alt="Moon Light Hosts Founders" className="w-full h-auto" />
               </CardContent>
             </Card>
           </div>
@@ -173,19 +154,15 @@ const About = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {values.map((value, index) => (
-              <Card
-                key={index}
-                className="luxury-border hover-lift text-center animate-scale-in"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
+            {values.map((value, index) => <Card key={index} className="luxury-border hover-lift text-center animate-scale-in" style={{
+            animationDelay: `${index * 0.1}s`
+          }}>
                 <CardContent className="p-8">
                   <div className="mb-4 flex justify-center">{value.icon}</div>
                   <h3 className="text-2xl font-heading font-semibold mb-4">{value.title}</h3>
                   <p className="text-muted-foreground">{value.description}</p>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
       </section>
@@ -198,15 +175,21 @@ const About = () => {
               <div className="text-5xl font-heading font-bold text-accent mb-2">500+</div>
               <p className="text-primary-foreground/80">Events Hosted</p>
             </div>
-            <div className="animate-fade-in" style={{ animationDelay: "0.1s" }}>
+            <div className="animate-fade-in" style={{
+            animationDelay: "0.1s"
+          }}>
               <div className="text-5xl font-heading font-bold text-accent mb-2">50+</div>
               <p className="text-primary-foreground/80">Professional Hosts</p>
             </div>
-            <div className="animate-fade-in" style={{ animationDelay: "0.2s" }}>
+            <div className="animate-fade-in" style={{
+            animationDelay: "0.2s"
+          }}>
               <div className="text-5xl font-heading font-bold text-accent mb-2">98%</div>
               <p className="text-primary-foreground/80">Client Satisfaction</p>
             </div>
-            <div className="animate-fade-in" style={{ animationDelay: "0.3s" }}>
+            <div className="animate-fade-in" style={{
+            animationDelay: "0.3s"
+          }}>
               <div className="text-5xl font-heading font-bold text-accent mb-2">5+</div>
               <p className="text-primary-foreground/80">Years Experience</p>
             </div>
@@ -215,8 +198,6 @@ const About = () => {
       </section>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default About;
