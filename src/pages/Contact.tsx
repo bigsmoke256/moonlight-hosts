@@ -8,6 +8,7 @@ import { Mail, Phone, MapPin, Send } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { useToast } from "@/hooks/use-toast";
+import galleryVestBack from "@/assets/gallery-vest-back.jpg";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -243,19 +244,25 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Map Section - Placeholder */}
+      {/* Team Image Section */}
       <section className="section-padding bg-muted">
         <div className="container mx-auto px-4">
           <Card className="luxury-border animate-fade-in overflow-hidden">
-            <div className="aspect-video bg-gradient-to-br from-primary to-accent/20 flex items-center justify-center">
-              <div className="text-center">
-                <MapPin className="w-16 h-16 text-accent mx-auto mb-4" />
-                <h3 className="text-2xl font-heading font-bold text-primary-foreground mb-2">
-                  Find Us Here
-                </h3>
-                <p className="text-primary-foreground/80">
-                  Kampala, Uganda - Central Location
-                </p>
+            <div className="relative aspect-video">
+              <img 
+                src={galleryVestBack} 
+                alt="Moonlight Hosts - Graceful Welcomes, Lasting Impressions"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex items-end justify-center pb-8">
+                <div className="text-center">
+                  <h3 className="text-2xl font-heading font-bold text-primary-foreground mb-2">
+                    Graceful Welcomes, Lasting Impressions
+                  </h3>
+                  <p className="text-primary-foreground/80">
+                    Kampala, Uganda - At Your Service
+                  </p>
+                </div>
               </div>
             </div>
           </Card>
