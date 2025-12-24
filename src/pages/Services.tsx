@@ -13,9 +13,9 @@ import {
 } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import weddingService from "@/assets/wedding-service.jpg";
-import conferenceService from "@/assets/conference-service.jpg";
-import birthdayService from "@/assets/birthday-service.jpg";
+import galleryServiceTrays from "@/assets/gallery-service-trays.jpg";
+import galleryFormalSuits from "@/assets/gallery-formal-suits.jpg";
+import galleryBlackUniforms from "@/assets/gallery-black-uniforms.jpg";
 
 const Services = () => {
   const services = [
@@ -24,56 +24,56 @@ const Services = () => {
       title: "Introduction / Kukyala",
       description:
         "Traditional Ugandan introduction ceremonies handled with cultural sensitivity and modern elegance. Our hosts ensure every custom is honored while maintaining a smooth flow.",
-      image: weddingService,
+      image: galleryServiceTrays,
     },
     {
       icon: <Cake className="w-10 h-10 text-accent" />,
       title: "Birthday Parties",
       description:
         "From children's birthday parties to milestone celebrations, we bring joy and professionalism to every age. Elegant hosting that lets you enjoy your special day.",
-      image: birthdayService,
+      image: galleryFormalSuits,
     },
     {
       icon: <Briefcase className="w-10 h-10 text-accent" />,
       title: "Conference Meetings",
       description:
         "Professional hosting for corporate conferences, seminars, and business meetings. We ensure your attendees feel welcomed and your event runs seamlessly.",
-      image: conferenceService,
+      image: galleryBlackUniforms,
     },
     {
       icon: <Heart className="w-10 h-10 text-accent" />,
       title: "Wedding Ceremonies",
       description:
         "Make your wedding day perfect with our elegant hosts who manage every detail. From guest reception to coordination, we ensure your celebration flows beautifully.",
-      image: weddingService,
+      image: galleryServiceTrays,
     },
     {
       icon: <Award className="w-10 h-10 text-accent" />,
       title: "Dinners / Awards",
       description:
         "Formal dinners and award ceremonies demand sophistication. Our hosts bring the refinement and coordination needed for these prestigious events.",
-      image: conferenceService,
+      image: galleryFormalSuits,
     },
     {
       icon: <Music className="w-10 h-10 text-accent" />,
       title: "Concerts / Seminars",
       description:
         "Large-scale events require experienced coordination. We handle crowd management, guest services, and logistics with professional grace.",
-      image: birthdayService,
+      image: galleryBlackUniforms,
     },
     {
       icon: <Flower className="w-10 h-10 text-accent" />,
       title: "Burials",
       description:
         "During difficult times, we provide respectful, dignified hosting services. Our team handles logistics with sensitivity, allowing families to focus on what matters.",
-      image: weddingService,
+      image: galleryServiceTrays,
     },
     {
       icon: <PartyPopper className="w-10 h-10 text-accent" />,
       title: "Festivals",
       description:
         "Community festivals and cultural celebrations come alive with our energetic yet professional hosting. We manage large crowds with efficiency and warmth.",
-      image: birthdayService,
+      image: galleryFormalSuits,
     },
   ];
 

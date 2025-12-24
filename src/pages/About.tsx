@@ -2,10 +2,10 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Target, Eye, Award } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import aboutTeam from "@/assets/about-team.jpg";
-import founder1 from "@/assets/founder-1.jpg";
-import founder2 from "@/assets/founder-2.jpg";
-import foundersTeam from "@/assets/founders-team.jpg";
+import galleryTeamFull from "@/assets/gallery-team-full.jpg";
+import galleryRedVests from "@/assets/gallery-red-vests.jpg";
+import galleryRedDresses from "@/assets/gallery-red-dresses.jpg";
+import galleryMixedFormal from "@/assets/gallery-mixed-formal.jpg";
 
 const About = () => {
   const values = [
@@ -50,8 +50,8 @@ const About = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="animate-fade-in">
               <img
-                src={aboutTeam}
-                alt="Moon Light Hosts Team"
+                src={galleryTeamFull}
+                alt="Moonlight Hosts Team"
                 className="rounded-lg shadow-2xl w-full h-auto"
               />
             </div>
@@ -128,8 +128,8 @@ const About = () => {
             <Card className="luxury-border hover-lift animate-fade-in overflow-hidden">
               <CardContent className="p-0">
                 <img
-                  src={founder1}
-                  alt="Co-Founder - Moon Light Hosts"
+                  src={galleryRedVests}
+                  alt="Moonlight Hosts Red Vests Team"
                   className="w-full h-auto"
                 />
               </CardContent>
@@ -138,8 +138,8 @@ const About = () => {
             <Card className="luxury-border hover-lift animate-fade-in overflow-hidden" style={{ animationDelay: "0.1s" }}>
               <CardContent className="p-0">
                 <img
-                  src={founder2}
-                  alt="Co-Founder - Moon Light Hosts"
+                  src={galleryRedDresses}
+                  alt="Moonlight Hosts Elegant Team"
                   className="w-full h-auto"
                 />
               </CardContent>
@@ -150,8 +150,8 @@ const About = () => {
             <Card className="luxury-border hover-lift overflow-hidden">
               <CardContent className="p-0">
                 <img
-                  src={foundersTeam}
-                  alt="Moon Light Hosts Founders"
+                  src={galleryMixedFormal}
+                  alt="Moonlight Hosts Full Team"
                   className="w-full h-auto"
                 />
               </CardContent>
