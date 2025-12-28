@@ -1,287 +1,310 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { Sparkles, Users, Award, Heart, ArrowRight, Phone } from "lucide-react";
+import { 
+  Clock, 
+  Sparkles, 
+  Users, 
+  Shield, 
+  HeartHandshake, 
+  ArrowRight,
+  CheckCircle2,
+  Star,
+  MessageSquareQuote
+} from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import heroImage from "@/assets/hero-image.jpg";
-import weddingService from "@/assets/wedding-service.jpg";
-import conferenceService from "@/assets/conference-service.jpg";
-import birthdayService from "@/assets/birthday-service.jpg";
-import teamMain from "@/assets/team-main.jpg";
+import galleryTeamFull from "@/assets/gallery-team-full.jpg";
+import galleryRedVests from "@/assets/gallery-red-vests.jpg";
+import galleryFormalSuits from "@/assets/gallery-formal-suits.jpg";
 
 const Index = () => {
-  const services = [
+  const moonlightStandards = [
     {
-      title: "Wedding Ceremonies",
-      description: "Make your special day unforgettable with our elegant hosting services.",
-      image: weddingService,
+      icon: <Clock className="w-6 h-6" />,
+      title: "Precision & Timing",
+      description: "Every second counts. Our hosts are trained to anticipate, not react.",
     },
     {
-      title: "Corporate Events",
-      description: "Professional hosting for conferences, meetings, and corporate gatherings.",
-      image: conferenceService,
+      icon: <Sparkles className="w-6 h-6" />,
+      title: "Grooming & Presentation",
+      description: "Immaculate appearance that reflects the elegance of your event.",
     },
     {
-      title: "Birthday Parties",
-      description: "Celebrate life's moments with grace and style.",
-      image: birthdayService,
+      icon: <HeartHandshake className="w-6 h-6" />,
+      title: "Guest Psychology & Etiquette",
+      description: "Understanding the unspoken needs of every guest we serve.",
+    },
+    {
+      icon: <Shield className="w-6 h-6" />,
+      title: "Confidentiality & Professionalism",
+      description: "Discretion is our default. Your event, your privacy.",
+    },
+    {
+      icon: <Star className="w-6 h-6" />,
+      title: "Crisis-Ready Hospitality",
+      description: "Calm under pressure. Solutions before problems arise.",
     },
   ];
 
-  const features = [
+  const clientJourney = [
     {
-      icon: <Sparkles className="w-8 h-8 text-accent" />,
-      title: "Luxury Service",
-      description: "Premium hospitality with attention to every detail.",
+      step: "01",
+      title: "Consultation & Event Profiling",
+      description: "We listen. We understand your vision, guest profile, and expectations.",
     },
     {
-      icon: <Users className="w-8 h-8 text-accent" />,
-      title: "Professional Team",
-      description: "Trained hosts in elegant uniforms ready to serve.",
+      step: "02",
+      title: "Team Matching & Styling",
+      description: "Handpicked hosts matched to your event's character and dress code.",
     },
     {
-      icon: <Award className="w-8 h-8 text-accent" />,
-      title: "Award Winning",
-      description: "Recognized for excellence in event hosting.",
+      step: "03",
+      title: "Pre-Event Briefing",
+      description: "Comprehensive walkthrough ensuring every detail is aligned.",
     },
     {
-      icon: <Heart className="w-8 h-8 text-accent" />,
-      title: "Memorable Experiences",
-      description: "Creating lasting impressions for you and your guests.",
+      step: "04",
+      title: "Flawless Execution",
+      description: "Seamless service from first arrival to final farewell.",
+    },
+    {
+      step: "05",
+      title: "Post-Event Review",
+      description: "Feedback loop to continuously elevate our partnership.",
     },
   ];
 
   const testimonials = [
     {
       name: "Sarah Nakato",
-      role: "Bride",
-      content: "Moon Light Hosts made our wedding absolutely perfect. Their professionalism and grace were outstanding.",
+      role: "Bride, Kampala",
+      content: "They didn't just host our wedding—they orchestrated an experience. Every guest felt like royalty.",
     },
     {
       name: "James Okello",
-      role: "Corporate Manager",
-      content: "We've used their services for multiple events. Always impeccable, always professional.",
+      role: "Corporate Director",
+      content: "Impeccable. Professional. Invisible until needed. Exactly what executive events require.",
     },
     {
       name: "Grace Namuli",
-      role: "Event Organizer",
-      content: "The best hosting service in Uganda. Their attention to detail is unmatched.",
+      role: "Event Planner",
+      content: "I've worked with many teams. None match Moonlight's attention to detail and composure.",
     },
   ];
 
+  const trustedVenues = [
+    "Serena Hotel",
+    "Kampala Sheraton",
+    "Lake Victoria",
+    "Munyonyo Resort",
+    "Speke Resort",
+  ];
+
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-background">
       <Navigation />
 
-      {/* Hero Section */}
+      {/* Cinematic Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <div
-          className="absolute inset-0 bg-cover bg-center"
+          className="absolute inset-0 bg-cover bg-center animate-ken-burns"
           style={{ backgroundImage: `url(${heroImage})` }}
-        >
-          <div className="absolute inset-0 bg-gradient-to-b from-primary/80 via-primary/70 to-primary/90" />
+        />
+        <div className="absolute inset-0 overlay-cinematic" />
+        
+        {/* Hero Content */}
+        <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
+          <div className="space-y-8 animate-fade-in-up">
+            {/* Accent Line */}
+            <div className="flex justify-center">
+              <div className="accent-line-wide" />
+            </div>
+            
+            <h1 className="text-display-sm md:text-display font-heading font-semibold text-foreground">
+              Graceful Welcomes.
+              <br />
+              <span className="text-gradient-gold">Lasting Impressions.</span>
+            </h1>
+            
+            <p className="text-body-lg text-muted-foreground max-w-2xl mx-auto font-light">
+              Elite hospitality for events that demand excellence. 
+              We don't just serve—we elevate every moment.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+              <Link to="/book">
+                <Button
+                  size="lg"
+                  className="bg-accent hover:bg-accent/90 text-accent-foreground font-medium px-8 py-6 text-base tracking-wide"
+                >
+                  Request Our Team
+                  <ArrowRight className="ml-2 w-4 h-4" />
+                </Button>
+              </Link>
+              <Link to="/services">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-accent/50 text-foreground hover:bg-accent/10 hover:border-accent px-8 py-6 text-base tracking-wide"
+                >
+                  Explore Services
+                </Button>
+              </Link>
+            </div>
+          </div>
         </div>
 
-        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto animate-fade-in-up">
-          <h1 className="text-5xl md:text-7xl font-heading font-bold mb-6 text-primary-foreground">
-            Graceful Welcomes.
-            <br />
-            <span className="text-gradient-gold">Lasting Impressions.</span>
-          </h1>
-          <p className="text-xl md:text-2xl mb-8 text-primary-foreground/90 font-body">
-            Premium hospitality and event hosting services that elevate every occasion.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/book">
-              <Button
-                size="lg"
-                className="bg-accent hover:bg-accent/90 text-primary font-body px-8 py-6 text-lg"
-              >
-                Book Our Services <ArrowRight className="ml-2" />
-              </Button>
-            </Link>
-            <a href="https://wa.me/yourwhatsappnumber" target="_blank" rel="noopener noreferrer">
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-accent text-accent hover:bg-accent hover:text-primary font-body px-8 py-6 text-lg"
-              >
-                <Phone className="mr-2" /> WhatsApp Us
-              </Button>
-            </a>
-          </div>
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-float">
+          <div className="w-px h-16 bg-gradient-to-b from-transparent via-accent/50 to-transparent" />
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="section-padding bg-background">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4">
-              Why Choose <span className="text-gradient-gold">Moon Light Hosts</span>
+      {/* The Moonlight Standard */}
+      <section className="section-padding bg-background relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-muted/30 to-transparent" />
+        
+        <div className="editorial-container relative">
+          <div className="text-center mb-16 md:mb-24 animate-fade-in">
+            <p className="text-accent text-sm tracking-[0.3em] uppercase mb-4">Our Philosophy</p>
+            <h2 className="text-headline md:text-display-sm font-heading font-semibold mb-6">
+              The Moonlight <span className="text-gradient-gold">Standard</span>
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              We bring elegance, professionalism, and warmth to every event we host.
+            <p className="text-muted-foreground max-w-2xl mx-auto text-body-lg font-light">
+              Five pillars that define elite hospitality. The invisible framework behind every flawless event.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {features.map((feature, index) => (
-              <Card
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 lg:gap-4">
+            {moonlightStandards.map((standard, index) => (
+              <div
                 key={index}
-                className="luxury-border hover-lift bg-card animate-scale-in"
+                className="group p-8 bg-card luxury-border hover-lift text-center animate-fade-in"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <CardContent className="p-6 text-center">
-                  <div className="mb-4 flex justify-center">{feature.icon}</div>
-                  <h3 className="text-xl font-heading font-semibold mb-2">{feature.title}</h3>
-                  <p className="text-muted-foreground text-sm">{feature.description}</p>
-                </CardContent>
-              </Card>
+                <div className="w-14 h-14 mx-auto mb-6 flex items-center justify-center border border-accent/30 text-accent group-hover:bg-accent group-hover:text-accent-foreground transition-all duration-500">
+                  {standard.icon}
+                </div>
+                <h3 className="font-heading font-semibold text-lg mb-3">{standard.title}</h3>
+                <p className="text-sm text-muted-foreground font-light leading-relaxed">
+                  {standard.description}
+                </p>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Our Team Section */}
-      <section className="section-padding bg-background">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4">
-              Welcome to <span className="text-gradient-gold">Moonlight Hosts</span>
+      {/* Editorial Image Section */}
+      <section className="relative h-[70vh] overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: `url(${galleryTeamFull})` }}
+        />
+        <div className="absolute inset-0 overlay-editorial" />
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="text-center px-6 animate-fade-in">
+            <p className="text-accent text-sm tracking-[0.3em] uppercase mb-4">Trusted Excellence</p>
+            <h2 className="text-headline md:text-display-sm font-heading font-semibold text-foreground max-w-3xl">
+              Where Presence Becomes <span className="italic">Performance</span>
             </h2>
           </div>
+        </div>
+      </section>
 
-          <div className="max-w-5xl mx-auto">
-            {/* Team Image */}
-            <div className="mb-12 animate-fade-in">
-              <Card className="luxury-border hover-lift overflow-hidden">
-                <CardContent className="p-0">
-                  <img
-                    src={teamMain}
-                    alt="Moonlight Hosts Team"
-                    className="w-full h-auto"
-                  />
-                </CardContent>
-              </Card>
-            </div>
+      {/* Client Journey */}
+      <section className="section-padding bg-background">
+        <div className="editorial-container">
+          <div className="text-center mb-16 md:mb-24 animate-fade-in">
+            <p className="text-accent text-sm tracking-[0.3em] uppercase mb-4">The Experience</p>
+            <h2 className="text-headline md:text-display-sm font-heading font-semibold mb-6">
+              What Working With Us <span className="text-gradient-gold">Looks Like</span>
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto text-body-lg font-light">
+              A structured approach to delivering exceptional hospitality, every time.
+            </p>
+          </div>
 
-            {/* About Content */}
-            <div className="space-y-10 text-center md:text-left">
-              <div className="animate-fade-in">
-                <p className="text-lg text-muted-foreground leading-relaxed">
-                  At Moonlight Hosts, we don't just serve events—we craft experiences that linger in the hearts of your guests. From the moment attendees arrive, our mission is clear: to deliver service that's seamless, professional, and unforgettable. Our team is a collective of trained hosts, event coordinators, and hospitality experts who live and breathe excellence, energy, and meticulous attention to detail. Every gesture, every smile, every interaction is carefully crafted to leave a lasting impression and elevate your event beyond expectations.
-                </p>
-              </div>
-
-              <div className="animate-fade-in">
-                <h3 className="text-2xl md:text-3xl font-heading font-bold mb-4">
-                  Who <span className="text-gradient-gold">We Are</span>
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  We are a team of dedicated professionals united by a passion for hospitality and high-standard service. Our hosts are more than just attendants—they are the heartbeat of every event. From greeting guests with warmth to anticipating needs before they are voiced, we ensure that every moment flows smoothly. At Moonlight Hosts, it's not just about serving—it's about creating an atmosphere of comfort, sophistication, and elegance where every guest feels valued and every interaction counts.
-                </p>
-              </div>
-
-              <div className="animate-fade-in">
-                <h3 className="text-2xl md:text-3xl font-heading font-bold mb-4">
-                  What <span className="text-gradient-gold">We Do</span>
-                </h3>
-                <p className="text-muted-foreground leading-relaxed mb-6">
-                  From breakfast meetings and luncheon gatherings to large-scale weddings, corporate events, and private celebrations, Moonlight Hosts brings precision, style, and care to every occasion. Our services include:
-                </p>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
-                  <div className="p-4 rounded-lg bg-muted/50 luxury-border">
-                    <h4 className="font-heading font-semibold text-accent mb-2">Attentive Guest Service</h4>
-                    <p className="text-sm text-muted-foreground">Every guest is treated with respect, courtesy, and professionalism.</p>
+          <div className="relative">
+            {/* Timeline Line */}
+            <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-border -translate-x-1/2" />
+            
+            <div className="space-y-8 lg:space-y-0">
+              {clientJourney.map((step, index) => (
+                <div
+                  key={index}
+                  className={`relative lg:grid lg:grid-cols-2 lg:gap-16 lg:py-12 animate-fade-in ${
+                    index % 2 === 0 ? "" : "lg:direction-rtl"
+                  }`}
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  {/* Content */}
+                  <div className={`${index % 2 === 0 ? "lg:text-right lg:pr-16" : "lg:col-start-2 lg:pl-16"}`}>
+                    <div className="bg-card p-8 luxury-border hover-lift">
+                      <span className="text-accent font-heading text-4xl font-semibold">{step.step}</span>
+                      <h3 className="font-heading font-semibold text-xl mt-4 mb-3">{step.title}</h3>
+                      <p className="text-muted-foreground font-light">{step.description}</p>
+                    </div>
                   </div>
-                  <div className="p-4 rounded-lg bg-muted/50 luxury-border">
-                    <h4 className="font-heading font-semibold text-accent mb-2">Event Coordination & Hosting</h4>
-                    <p className="text-sm text-muted-foreground">We keep your event flowing effortlessly, handling logistics and timing behind the scenes.</p>
-                  </div>
-                  <div className="p-4 rounded-lg bg-muted/50 luxury-border">
-                    <h4 className="font-heading font-semibold text-accent mb-2">VIP Experiences</h4>
-                    <p className="text-sm text-muted-foreground">Exclusivity, comfort, and personalized attention for distinguished guests.</p>
-                  </div>
-                  <div className="p-4 rounded-lg bg-muted/50 luxury-border">
-                    <h4 className="font-heading font-semibold text-accent mb-2">Beverage & Catering Service</h4>
-                    <p className="text-sm text-muted-foreground">Drinks, meals, and treats delivered with style, grace, and impeccable timing.</p>
-                  </div>
-                  <div className="p-4 rounded-lg bg-muted/50 luxury-border md:col-span-2">
-                    <h4 className="font-heading font-semibold text-accent mb-2">Ambience Management</h4>
-                    <p className="text-sm text-muted-foreground">Lighting, seating arrangements, and subtle details that enhance the overall experience.</p>
-                  </div>
+                  
+                  {/* Timeline Dot */}
+                  <div className="hidden lg:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-accent rounded-full border-4 border-background" />
                 </div>
-                <p className="text-muted-foreground leading-relaxed mt-6">
-                  We pride ourselves on anticipating every need, solving challenges before they arise, and creating an environment where both hosts and guests feel empowered to enjoy the moment.
-                </p>
-              </div>
-
-              <div className="animate-fade-in">
-                <h3 className="text-2xl md:text-3xl font-heading font-bold mb-4">
-                  Our <span className="text-gradient-gold">Promise</span>
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  Moonlight Hosts is more than a team—it's a benchmark for excellence in hospitality. We promise professionalism, consistency, and service that exceeds expectations. Whether you're celebrating a milestone, hosting a corporate event, or planning a private gathering, we make every guest feel valued, every detail perfect, and every moment memorable.
-                </p>
-              </div>
-
-              <div className="animate-fade-in bg-gradient-to-r from-accent/10 to-accent/5 p-8 rounded-lg luxury-border">
-                <h3 className="text-2xl md:text-3xl font-heading font-bold mb-4">
-                  Join <span className="text-gradient-gold">Us</span>
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  Step into a world where service meets sophistication, where every detail matters, and where every guest is part of a story crafted with care. Let Moonlight Hosts transform your event into an experience that will be remembered, talked about, and cherished long after the last guest departs. Your vision, our expertise—together, we create memories that shine.
-                </p>
-              </div>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
       {/* Services Preview */}
-      <section className="section-padding bg-muted">
-        <div className="container mx-auto px-4">
+      <section className="section-padding bg-muted/30">
+        <div className="editorial-container">
           <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4">
-              Our <span className="text-gradient-gold">Premium Services</span>
+            <p className="text-accent text-sm tracking-[0.3em] uppercase mb-4">Our Services</p>
+            <h2 className="text-headline md:text-display-sm font-heading font-semibold mb-6">
+              Experiences, Not Just <span className="text-gradient-gold">Services</span>
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              From intimate gatherings to grand celebrations, we host with excellence.
-            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-            {services.map((service, index) => (
-              <Card
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              { image: galleryRedVests, title: "Wedding Ceremonies", caption: "Timeless Elegance" },
+              { image: galleryFormalSuits, title: "Corporate Events", caption: "Executive Precision" },
+              { image: galleryTeamFull, title: "VIP & Private Events", caption: "Discreet Excellence" },
+            ].map((service, index) => (
+              <Link
                 key={index}
-                className="overflow-hidden hover-lift luxury-border animate-fade-in"
+                to="/services"
+                className="group relative aspect-[3/4] overflow-hidden animate-fade-in"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="relative h-64 overflow-hidden">
-                  <img
-                    src={service.image}
-                    alt={service.title}
-                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent" />
+                <img
+                  src={service.image}
+                  alt={service.title}
+                  className="absolute inset-0 w-full h-full object-cover filter-editorial transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-500" />
+                
+                {/* Gold Overlay on Hover */}
+                <div className="absolute inset-0 bg-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                
+                <div className="absolute inset-0 p-8 flex flex-col justify-end">
+                  <p className="text-accent text-xs tracking-[0.2em] uppercase mb-2">{service.caption}</p>
+                  <h3 className="font-heading font-semibold text-2xl text-foreground">{service.title}</h3>
                 </div>
-                <CardContent className="p-6">
-                  <h3 className="text-2xl font-heading font-semibold mb-3">{service.title}</h3>
-                  <p className="text-muted-foreground mb-4">{service.description}</p>
-                </CardContent>
-              </Card>
+              </Link>
             ))}
           </div>
 
-          <div className="text-center">
+          <div className="text-center mt-12">
             <Link to="/services">
               <Button
-                size="lg"
-                className="bg-primary hover:bg-primary/90 text-primary-foreground"
+                variant="outline"
+                className="border-accent/50 text-foreground hover:bg-accent/10 hover:border-accent px-8 py-6"
               >
-                View All Services <ArrowRight className="ml-2" />
+                View All Services
+                <ArrowRight className="ml-2 w-4 h-4" />
               </Button>
             </Link>
           </div>
@@ -289,64 +312,99 @@ const Index = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="section-padding bg-primary text-primary-foreground">
-        <div className="container mx-auto px-4">
+      <section className="section-padding bg-background">
+        <div className="editorial-container">
           <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4">
-              What Our <span className="text-accent">Clients Say</span>
+            <p className="text-accent text-sm tracking-[0.3em] uppercase mb-4">Testimonials</p>
+            <h2 className="text-headline md:text-display-sm font-heading font-semibold">
+              Words From Those <span className="text-gradient-gold">We've Served</span>
             </h2>
-            <p className="text-lg text-primary-foreground/80 max-w-2xl mx-auto">
-              Don't just take our word for it - hear from those we've served.
-            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
-              <Card
+              <div
                 key={index}
-                className="bg-card/5 border-accent/20 hover-lift animate-fade-in"
+                className="bg-card p-8 luxury-border hover-lift animate-fade-in"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <CardContent className="p-6">
-                  <p className="text-primary-foreground/90 mb-4 italic">"{testimonial.content}"</p>
-                  <div>
-                    <p className="font-heading font-semibold text-accent">{testimonial.name}</p>
-                    <p className="text-sm text-primary-foreground/70">{testimonial.role}</p>
+                <MessageSquareQuote className="w-8 h-8 text-accent/50 mb-6" />
+                <p className="text-foreground/90 mb-8 italic font-light leading-relaxed">
+                  "{testimonial.content}"
+                </p>
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center">
+                    <span className="text-accent font-heading font-semibold">
+                      {testimonial.name.charAt(0)}
+                    </span>
                   </div>
-                </CardContent>
-              </Card>
+                  <div>
+                    <p className="font-heading font-semibold text-foreground">{testimonial.name}</p>
+                    <p className="text-sm text-muted-foreground">{testimonial.role}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Trusted At */}
+      <section className="py-16 bg-muted/20 border-y border-border/30">
+        <div className="editorial-container">
+          <p className="text-center text-muted-foreground text-sm tracking-[0.2em] uppercase mb-8">
+            Trusted At Premier Venues
+          </p>
+          <div className="flex flex-wrap justify-center gap-8 md:gap-16">
+            {trustedVenues.map((venue, index) => (
+              <span
+                key={index}
+                className="text-accent/60 font-heading text-lg hover:text-accent transition-colors cursor-default"
+              >
+                {venue}
+              </span>
             ))}
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding bg-gradient-to-r from-primary via-primary to-accent/20">
-        <div className="container mx-auto px-4 text-center animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-heading font-bold text-primary-foreground mb-6">
-            Ready to Create <span className="text-accent">Unforgettable Moments?</span>
-          </h2>
-          <p className="text-xl text-primary-foreground/90 mb-8 max-w-2xl mx-auto">
-            Let Moon Light Hosts bring elegance and professionalism to your next event.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/book">
-              <Button
-                size="lg"
-                className="bg-accent hover:bg-accent/90 text-primary px-8 py-6 text-lg"
-              >
-                Get a Quote
-              </Button>
-            </Link>
-            <Link to="/contact">
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-accent text-accent hover:bg-accent hover:text-primary px-8 py-6 text-lg"
-              >
-                Contact Us
-              </Button>
-            </Link>
+      <section className="section-padding bg-background relative overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-gradient-to-r from-accent/5 via-transparent to-accent/5" />
+        </div>
+        
+        <div className="editorial-container relative text-center">
+          <div className="max-w-3xl mx-auto animate-fade-in">
+            <h2 className="text-headline md:text-display-sm font-heading font-semibold mb-6">
+              Ready to Elevate Your <span className="text-gradient-gold">Event?</span>
+            </h2>
+            <p className="text-muted-foreground text-body-lg font-light mb-10">
+              Let's discuss how Moonlight Hosts can deliver an experience 
+              that exceeds expectations and creates lasting impressions.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link to="/book">
+                <Button
+                  size="lg"
+                  className="bg-accent hover:bg-accent/90 text-accent-foreground px-10 py-6 text-base"
+                >
+                  Request Our Team
+                </Button>
+              </Link>
+              <Link to="/vip">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-accent/50 text-foreground hover:bg-accent/10 hover:border-accent px-10 py-6 text-base"
+                >
+                  VIP & Private Events
+                </Button>
+              </Link>
+            </div>
+            <p className="text-muted-foreground text-sm mt-8">
+              We respond within 24 hours with a tailored hospitality plan.
+            </p>
           </div>
         </div>
       </section>
