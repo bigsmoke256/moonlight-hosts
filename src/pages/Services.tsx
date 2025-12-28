@@ -1,6 +1,5 @@
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 import {
   Heart,
   Users,
@@ -10,192 +9,231 @@ import {
   Music,
   Flower,
   PartyPopper,
+  ArrowRight,
+  CheckCircle2,
 } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import galleryServiceTrays from "@/assets/gallery-service-trays.jpg";
 import galleryFormalSuits from "@/assets/gallery-formal-suits.jpg";
 import galleryBlackUniforms from "@/assets/gallery-black-uniforms.jpg";
+import galleryRedVests from "@/assets/gallery-red-vests.jpg";
+import galleryRedDresses from "@/assets/gallery-red-dresses.jpg";
+import galleryMixedFormal from "@/assets/gallery-mixed-formal.jpg";
+import galleryTeamFull from "@/assets/gallery-team-full.jpg";
 
 const Services = () => {
   const services = [
     {
-      icon: <Heart className="w-10 h-10 text-accent" />,
-      title: "Introduction / Kukyala",
-      description:
-        "Traditional Ugandan introduction ceremonies handled with cultural sensitivity and modern elegance. Our hosts ensure every custom is honored while maintaining a smooth flow.",
-      image: galleryServiceTrays,
-    },
-    {
-      icon: <Cake className="w-10 h-10 text-accent" />,
-      title: "Birthday Parties",
-      description:
-        "From children's birthday parties to milestone celebrations, we bring joy and professionalism to every age. Elegant hosting that lets you enjoy your special day.",
-      image: galleryFormalSuits,
-    },
-    {
-      icon: <Briefcase className="w-10 h-10 text-accent" />,
-      title: "Conference Meetings",
-      description:
-        "Professional hosting for corporate conferences, seminars, and business meetings. We ensure your attendees feel welcomed and your event runs seamlessly.",
-      image: galleryBlackUniforms,
-    },
-    {
-      icon: <Heart className="w-10 h-10 text-accent" />,
+      icon: <Heart className="w-6 h-6" />,
       title: "Wedding Ceremonies",
-      description:
-        "Make your wedding day perfect with our elegant hosts who manage every detail. From guest reception to coordination, we ensure your celebration flows beautifully.",
+      tagline: "Timeless Elegance",
+      description: "Where love meets perfection. Our hosts ensure every moment flows with grace and every guest feels the magic.",
       image: galleryServiceTrays,
     },
     {
-      icon: <Award className="w-10 h-10 text-accent" />,
-      title: "Dinners / Awards",
-      description:
-        "Formal dinners and award ceremonies demand sophistication. Our hosts bring the refinement and coordination needed for these prestigious events.",
+      icon: <Briefcase className="w-6 h-6" />,
+      title: "Corporate Events",
+      tagline: "Executive Precision",
+      description: "Polished professionalism that reflects your brand. Conferences, galas, and business gatherings elevated.",
       image: galleryFormalSuits,
     },
     {
-      icon: <Music className="w-10 h-10 text-accent" />,
-      title: "Concerts / Seminars",
-      description:
-        "Large-scale events require experienced coordination. We handle crowd management, guest services, and logistics with professional grace.",
+      icon: <Heart className="w-6 h-6" />,
+      title: "Introduction / Kukyala",
+      tagline: "Cultural Heritage",
+      description: "Traditional ceremonies handled with deep cultural respect and contemporary sophistication.",
+      image: galleryRedVests,
+    },
+    {
+      icon: <Cake className="w-6 h-6" />,
+      title: "Birthday Celebrations",
+      tagline: "Joyful Moments",
+      description: "From intimate gatherings to grand celebrations, we bring warmth and elegance to every milestone.",
       image: galleryBlackUniforms,
     },
     {
-      icon: <Flower className="w-10 h-10 text-accent" />,
-      title: "Burials",
-      description:
-        "During difficult times, we provide respectful, dignified hosting services. Our team handles logistics with sensitivity, allowing families to focus on what matters.",
-      image: galleryServiceTrays,
+      icon: <Award className="w-6 h-6" />,
+      title: "Dinners & Awards",
+      tagline: "Refined Glamour",
+      description: "Formal occasions demand exceptional service. We deliver sophistication that matches the prestige.",
+      image: galleryRedDresses,
     },
     {
-      icon: <PartyPopper className="w-10 h-10 text-accent" />,
-      title: "Festivals",
-      description:
-        "Community festivals and cultural celebrations come alive with our energetic yet professional hosting. We manage large crowds with efficiency and warmth.",
-      image: galleryFormalSuits,
+      icon: <Music className="w-6 h-6" />,
+      title: "Concerts & Seminars",
+      tagline: "Crowd Excellence",
+      description: "Large-scale events with seamless coordination. Managing energy while maintaining composure.",
+      image: galleryMixedFormal,
     },
   ];
 
+  const inclusions = [
+    "Professionally trained hosts in premium attire",
+    "Pre-event consultation and planning session",
+    "Guest reception and seamless coordination",
+    "Event flow management and timing",
+    "MC services available upon request",
+    "Post-event coordination and cleanup",
+  ];
+
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-background">
       <Navigation />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-gradient-to-b from-primary to-background">
-        <div className="container mx-auto px-4">
-          <div className="text-center animate-fade-in-up">
-            <h1 className="text-5xl md:text-6xl font-heading font-bold mb-6 text-primary-foreground">
-              Our <span className="text-accent">Premium Services</span>
+      <section className="pt-32 pb-20 md:pt-40 md:pb-28 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-muted/50 to-background" />
+        
+        <div className="editorial-container relative">
+          <div className="text-center max-w-3xl mx-auto animate-fade-in-up">
+            <p className="text-accent text-sm tracking-[0.3em] uppercase mb-4">Our Services</p>
+            <h1 className="text-display-sm md:text-display font-heading font-semibold mb-6">
+              Experiences, Not Just <span className="text-gradient-gold">Services</span>
             </h1>
-            <p className="text-xl text-primary-foreground/90 max-w-3xl mx-auto">
-              Professional hosting for every occasion - from intimate gatherings to grand celebrations.
+            <p className="text-body-lg text-muted-foreground font-light">
+              Every event is unique. Our approach is tailored, our execution flawless. 
+              Discover how we transform occasions into unforgettable experiences.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Services Grid */}
-      <section className="section-padding">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {/* Services Grid - Editorial Style */}
+      <section className="section-padding-sm">
+        <div className="editorial-container">
+          <div className="space-y-24">
             {services.map((service, index) => (
-              <Card
+              <div
                 key={index}
-                className="luxury-border hover-lift overflow-hidden animate-fade-in"
-                style={{ animationDelay: `${index * 0.05}s` }}
+                className={`grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center animate-fade-in ${
+                  index % 2 === 1 ? "lg:direction-rtl" : ""
+                }`}
+                style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="relative h-48 overflow-hidden">
-                  <img
-                    src={service.image}
-                    alt={service.title}
-                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent" />
-                  <div className="absolute bottom-4 left-6">{service.icon}</div>
+                {/* Image */}
+                <div className={`relative group overflow-hidden ${index % 2 === 1 ? "lg:order-2" : ""}`}>
+                  <div className="aspect-[4/3] overflow-hidden luxury-border">
+                    <img
+                      src={service.image}
+                      alt={service.title}
+                      className="w-full h-full object-cover filter-editorial transition-all duration-700 group-hover:scale-105"
+                    />
+                  </div>
+                  {/* Gold Accent Corner */}
+                  <div className="absolute top-0 left-0 w-16 h-16">
+                    <div className="absolute top-0 left-0 w-full h-px bg-accent" />
+                    <div className="absolute top-0 left-0 h-full w-px bg-accent" />
+                  </div>
+                  <div className="absolute bottom-0 right-0 w-16 h-16">
+                    <div className="absolute bottom-0 right-0 w-full h-px bg-accent" />
+                    <div className="absolute bottom-0 right-0 h-full w-px bg-accent" />
+                  </div>
                 </div>
-                <CardContent className="p-6">
-                  <h3 className="text-2xl font-heading font-semibold mb-3">{service.title}</h3>
-                  <p className="text-muted-foreground mb-4">{service.description}</p>
+
+                {/* Content */}
+                <div className={`space-y-6 ${index % 2 === 1 ? "lg:order-1 lg:text-right" : ""}`}>
+                  <div className={`flex items-center gap-3 ${index % 2 === 1 ? "lg:justify-end" : ""}`}>
+                    <span className="w-10 h-10 flex items-center justify-center border border-accent/30 text-accent">
+                      {service.icon}
+                    </span>
+                    <span className="text-accent text-sm tracking-[0.2em] uppercase">{service.tagline}</span>
+                  </div>
+                  
+                  <h2 className="text-headline font-heading font-semibold">{service.title}</h2>
+                  
+                  <p className="text-muted-foreground text-body-lg font-light leading-relaxed">
+                    {service.description}
+                  </p>
+                  
                   <Link to="/book">
                     <Button
                       variant="outline"
-                      className="border-accent text-accent hover:bg-accent hover:text-primary"
+                      className={`border-accent/50 text-foreground hover:bg-accent/10 hover:border-accent mt-4 ${
+                        index % 2 === 1 ? "lg:ml-auto" : ""
+                      }`}
                     >
-                      Book This Service
+                      Book This Experience
+                      <ArrowRight className="ml-2 w-4 h-4" />
                     </Button>
                   </Link>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* What's Included Section */}
-      <section className="section-padding bg-muted">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4">
-              What's <span className="text-gradient-gold">Included</span>
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Every Moon Light Hosts service comes with premium features.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            {[
-              "Professional hosts in elegant black & gold uniforms",
-              "Pre-event consultation and planning",
-              "Guest reception and coordination",
-              "Event flow management",
-              "MC services (upon request)",
-              "Professional etiquette training",
-              "Flexible packages for all budgets",
-              "Post-event cleanup coordination",
-              "24/7 customer support",
-            ].map((item, index) => (
-              <div
-                key={index}
-                className="flex items-start space-x-3 animate-fade-in"
-                style={{ animationDelay: `${index * 0.05}s` }}
-              >
-                <div className="w-2 h-2 rounded-full bg-accent mt-2 flex-shrink-0" />
-                <p className="text-foreground">{item}</p>
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
+      {/* What's Included */}
+      <section className="section-padding bg-muted/30">
+        <div className="editorial-container">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="animate-fade-in">
+              <p className="text-accent text-sm tracking-[0.3em] uppercase mb-4">Every Booking Includes</p>
+              <h2 className="text-headline font-heading font-semibold mb-8">
+                The Moonlight <span className="text-gradient-gold">Promise</span>
+              </h2>
+              
+              <div className="space-y-4">
+                {inclusions.map((item, index) => (
+                  <div
+                    key={index}
+                    className="flex items-start gap-4 animate-fade-in"
+                    style={{ animationDelay: `${index * 0.05}s` }}
+                  >
+                    <CheckCircle2 className="w-5 h-5 text-accent mt-1 flex-shrink-0" />
+                    <p className="text-foreground font-light">{item}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="relative animate-fade-in" style={{ animationDelay: "0.3s" }}>
+              <div className="aspect-square overflow-hidden luxury-border">
+                <img
+                  src={galleryTeamFull}
+                  alt="Moonlight Hosts Team"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              {/* Decorative Elements */}
+              <div className="absolute -bottom-4 -right-4 w-24 h-24 border border-accent/30" />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
-      <section className="section-padding bg-primary text-primary-foreground">
-        <div className="container mx-auto px-4 text-center animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6">
-            Ready to <span className="text-accent">Book Your Event?</span>
-          </h2>
-          <p className="text-xl text-primary-foreground/90 mb-8 max-w-2xl mx-auto">
-            Let's discuss how Moon Light Hosts can make your event exceptional.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/book">
-              <Button
-                size="lg"
-                className="bg-accent hover:bg-accent/90 text-primary px-8 py-6 text-lg"
-              >
-                Get Started
-              </Button>
-            </Link>
-            <Link to="/contact">
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-accent text-accent hover:bg-accent hover:text-primary px-8 py-6 text-lg"
-              >
-                Contact Us
-              </Button>
-            </Link>
+      <section className="section-padding bg-background">
+        <div className="editorial-container text-center">
+          <div className="max-w-3xl mx-auto animate-fade-in">
+            <p className="text-accent text-sm tracking-[0.3em] uppercase mb-4">Let's Create Together</p>
+            <h2 className="text-headline md:text-display-sm font-heading font-semibold mb-6">
+              Ready to Transform Your <span className="text-gradient-gold">Event?</span>
+            </h2>
+            <p className="text-muted-foreground text-body-lg font-light mb-10">
+              Every event deserves excellence. Let's discuss how Moonlight Hosts 
+              can deliver an experience that exceeds expectations.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link to="/book">
+                <Button
+                  size="lg"
+                  className="bg-accent hover:bg-accent/90 text-accent-foreground px-10 py-6"
+                >
+                  Request Our Team
+                </Button>
+              </Link>
+              <Link to="/contact">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-accent/50 text-foreground hover:bg-accent/10 hover:border-accent px-10 py-6"
+                >
+                  Contact Us
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       </section>

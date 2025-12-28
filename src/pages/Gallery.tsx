@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
+import { X } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import galleryTeamFull from "@/assets/gallery-team-full.jpg";
@@ -13,102 +13,131 @@ import galleryBlackUniforms from "@/assets/gallery-black-uniforms.jpg";
 import galleryTeamSix from "@/assets/gallery-team-six.jpg";
 
 const Gallery = () => {
-  const [activeFilter, setActiveFilter] = useState("all");
+  const [selectedImage, setSelectedImage] = useState<{ src: string; title: string } | null>(null);
 
   const images = [
-    { src: galleryTeamFull, category: "team", title: "The Moonlight Hosts Team" },
-    { src: galleryServiceTrays, category: "team", title: "Service Excellence" },
-    { src: galleryVestBack, category: "team", title: "Graceful Welcomes, Lasting Impressions" },
-    { src: galleryRedVests, category: "team", title: "Professional Red Vests" },
-    { src: galleryRedDresses, category: "team", title: "Elegant Red Dress Hosts" },
-    { src: galleryFormalSuits, category: "team", title: "Formal Event Attire" },
-    { src: galleryMixedFormal, category: "team", title: "Team Formal Style" },
-    { src: galleryBlackUniforms, category: "team", title: "Classic Black Uniform Team" },
-    { src: galleryTeamSix, category: "team", title: "Professional Host Team" },
+    { src: galleryTeamFull, title: "Elite Team", caption: "The Moonlight Standard" },
+    { src: galleryServiceTrays, title: "Service Excellence", caption: "Precision in Motion" },
+    { src: galleryVestBack, title: "Graceful Presence", caption: "Where Elegance Begins" },
+    { src: galleryRedVests, title: "Corporate Precision", caption: "Executive Hospitality" },
+    { src: galleryRedDresses, title: "Wedding Poise", caption: "Timeless Elegance" },
+    { src: galleryFormalSuits, title: "VIP Protocol", caption: "Discreet Excellence" },
+    { src: galleryMixedFormal, title: "Team Unity", caption: "Collective Perfection" },
+    { src: galleryBlackUniforms, title: "Classic Standards", caption: "Refined Professionalism" },
+    { src: galleryTeamSix, title: "Event Ready", caption: "Prepared for Excellence" },
   ];
-
-  const filters = [
-    { label: "All", value: "all" },
-    { label: "Weddings", value: "wedding" },
-    { label: "Corporate", value: "corporate" },
-    { label: "Parties", value: "party" },
-    { label: "Team", value: "team" },
-  ];
-
-  const filteredImages =
-    activeFilter === "all"
-      ? images
-      : images.filter((img) => img.category === activeFilter);
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-background">
       <Navigation />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-gradient-to-b from-primary to-background">
-        <div className="container mx-auto px-4">
-          <div className="text-center animate-fade-in-up">
-            <h1 className="text-5xl md:text-6xl font-heading font-bold mb-6 text-primary-foreground">
-              Our <span className="text-accent">Gallery</span>
+      <section className="pt-32 pb-16 md:pt-40 md:pb-24 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-muted/50 to-background" />
+        
+        <div className="editorial-container relative">
+          <div className="text-center max-w-3xl mx-auto animate-fade-in-up">
+            <p className="text-accent text-sm tracking-[0.3em] uppercase mb-4">Our Portfolio</p>
+            <h1 className="text-display-sm md:text-display font-heading font-semibold mb-6">
+              Moments of <span className="text-gradient-gold">Excellence</span>
             </h1>
-            <p className="text-xl text-primary-foreground/90 max-w-3xl mx-auto">
-              Moments of elegance captured at events we've had the privilege to host.
+            <p className="text-body-lg text-muted-foreground font-light">
+              A curated collection capturing the essence of elite hospitality. 
+              Every frame tells a story of grace, precision, and unforgettable experiences.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Filters */}
-      <section className="py-8 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-wrap justify-center gap-4 animate-fade-in">
-            {filters.map((filter) => (
-              <Button
-                key={filter.value}
-                variant={activeFilter === filter.value ? "default" : "outline"}
-                onClick={() => setActiveFilter(filter.value)}
-                className={
-                  activeFilter === filter.value
-                    ? "bg-accent text-primary hover:bg-accent/90"
-                    : "border-accent text-accent hover:bg-accent hover:text-primary"
-                }
-              >
-                {filter.label}
-              </Button>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Image Grid */}
-      <section className="section-padding">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredImages.map((image, index) => (
+      {/* Editorial Gallery Grid */}
+      <section className="section-padding-sm">
+        <div className="editorial-container">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {images.map((image, index) => (
               <div
                 key={index}
-                className="group relative overflow-hidden rounded-lg luxury-border hover-lift animate-fade-in"
-                style={{ animationDelay: `${index * 0.05}s` }}
+                onClick={() => setSelectedImage(image)}
+                className="group relative cursor-pointer overflow-hidden animate-fade-in"
+                style={{ 
+                  animationDelay: `${index * 0.05}s`,
+                  aspectRatio: index === 0 || index === 4 ? '4/5' : '3/4'
+                }}
               >
-                <div className="aspect-[4/3] overflow-hidden">
-                  <img
-                    src={image.src}
-                    alt={image.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
+                {/* Image with B&W filter */}
+                <img
+                  src={image.src}
+                  alt={image.title}
+                  className="w-full h-full object-cover filter-editorial transition-all duration-700 group-hover:scale-105"
+                />
+                
+                {/* Gold overlay on hover */}
+                <div className="absolute inset-0 bg-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                
+                {/* Gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                
+                {/* Caption */}
+                <div className="absolute inset-0 p-6 flex flex-col justify-end opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <p className="text-accent text-xs tracking-[0.2em] uppercase mb-1">{image.caption}</p>
+                  <h3 className="font-heading font-semibold text-xl text-foreground">{image.title}</h3>
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
-                  <div className="p-6 w-full">
-                    <h3 className="text-xl font-heading font-semibold text-primary-foreground">
-                      {image.title}
-                    </h3>
-                  </div>
+                
+                {/* Corner accents on hover */}
+                <div className="absolute top-4 left-4 w-8 h-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <div className="absolute top-0 left-0 w-full h-px bg-accent" />
+                  <div className="absolute top-0 left-0 h-full w-px bg-accent" />
+                </div>
+                <div className="absolute bottom-4 right-4 w-8 h-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <div className="absolute bottom-0 right-0 w-full h-px bg-accent" />
+                  <div className="absolute bottom-0 right-0 h-full w-px bg-accent" />
                 </div>
               </div>
             ))}
           </div>
         </div>
       </section>
+
+      {/* Quote Section */}
+      <section className="section-padding bg-muted/20">
+        <div className="editorial-container">
+          <div className="text-center max-w-4xl mx-auto animate-fade-in">
+            <div className="accent-line-wide mx-auto mb-8" />
+            <blockquote className="text-headline md:text-display-sm font-heading font-normal italic text-foreground/90 mb-8">
+              "Where presence becomes performance."
+            </blockquote>
+            <p className="text-muted-foreground tracking-[0.2em] uppercase text-sm">— Moonlight Hosts</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Lightbox */}
+      {selectedImage && (
+        <div 
+          className="lightbox-overlay animate-fade-in-slow"
+          onClick={() => setSelectedImage(null)}
+        >
+          <button 
+            onClick={() => setSelectedImage(null)}
+            className="absolute top-6 right-6 z-50 w-12 h-12 flex items-center justify-center text-foreground hover:text-accent transition-colors"
+          >
+            <X className="w-6 h-6" />
+          </button>
+          
+          <div className="lightbox-content">
+            <div className="relative max-w-5xl max-h-[90vh] animate-scale-in">
+              <img
+                src={selectedImage.src}
+                alt={selectedImage.title}
+                className="max-w-full max-h-[85vh] object-contain"
+                onClick={(e) => e.stopPropagation()}
+              />
+              <div className="absolute -bottom-16 left-0 right-0 text-center">
+                <h3 className="font-heading font-semibold text-xl text-foreground">{selectedImage.title}</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
       <Footer />
     </div>
