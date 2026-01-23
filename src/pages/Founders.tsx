@@ -1,9 +1,27 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
-import galleryRedVests from "@/assets/gallery-red-vests.jpg";
-import galleryRedDresses from "@/assets/gallery-red-dresses.jpg";
-import galleryMixedFormal from "@/assets/gallery-mixed-formal.jpg";
+import founderBrenda from "@/assets/founder-brenda.jpg";
+import founderBarbara from "@/assets/founder-barbara.jpg";
+import founderJoshua from "@/assets/founder-joshua.webp";
+
+const founders = [
+  {
+    name: "Brenda Matama",
+    role: "Co-Founder",
+    image: founderBrenda,
+  },
+  {
+    name: "Kobusinge Barbara",
+    role: "Co-Founder",
+    image: founderBarbara,
+  },
+  {
+    name: "Musinguzi Joshua",
+    role: "Content Creator & Media Manager",
+    image: founderJoshua,
+  },
+];
 
 const Founders = () => {
   return (
@@ -39,42 +57,34 @@ const Founders = () => {
             </p>
           </div>
 
-          {/* Founders Images */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-            <Card className="luxury-border hover-lift animate-fade-in overflow-hidden group">
-              <CardContent className="p-0 relative">
-                <img
-                  src={galleryRedVests}
-                  alt="Moonlight Hosts Founding Team"
-                  className="w-full h-auto transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              </CardContent>
-            </Card>
-
-            <Card className="luxury-border hover-lift animate-fade-in overflow-hidden group" style={{ animationDelay: "0.1s" }}>
-              <CardContent className="p-0 relative">
-                <img
-                  src={galleryRedDresses}
-                  alt="Moonlight Hosts Leadership"
-                  className="w-full h-auto transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              </CardContent>
-            </Card>
-          </div>
-
-          <div className="max-w-4xl mx-auto animate-fade-in" style={{ animationDelay: "0.2s" }}>
-            <Card className="luxury-border hover-lift overflow-hidden group">
-              <CardContent className="p-0 relative">
-                <img
-                  src={galleryMixedFormal}
-                  alt="Moonlight Hosts Full Founding Team"
-                  className="w-full h-auto transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              </CardContent>
-            </Card>
+          {/* Founders Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {founders.map((founder, index) => (
+              <Card 
+                key={founder.name}
+                className="luxury-border hover-lift animate-fade-in overflow-hidden group"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <CardContent className="p-0 relative">
+                  <div className="aspect-[3/4] overflow-hidden">
+                    <img
+                      src={founder.image}
+                      alt={founder.name}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-6 text-center">
+                    <h3 className="text-xl font-heading font-bold text-white mb-1">
+                      {founder.name}
+                    </h3>
+                    <p className="text-accent font-medium text-sm">
+                      {founder.role}
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
