@@ -3,23 +3,22 @@ import { Button } from "@/components/ui/button";
 import { 
   Clock, 
   Sparkles, 
-  Users, 
   Shield, 
   HeartHandshake, 
   ArrowRight,
-  CheckCircle2,
   Star,
   MessageSquareQuote
 } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import VisitorRegistrationForm from "@/components/VisitorRegistrationForm";
+import { useVisitorRegistration } from "@/hooks/useVisitorRegistration";
 import heroImage from "@/assets/hero-image.jpg";
 import galleryTeamFull from "@/assets/gallery-team-full.jpg";
 import galleryRedVests from "@/assets/gallery-red-vests.jpg";
 import galleryFormalSuits from "@/assets/gallery-formal-suits.jpg";
 
-const Index = () => {
-  const moonlightStandards = [
+const moonlightStandards = [
     {
       icon: <Clock className="w-6 h-6" />,
       title: "Precision & Timing",
@@ -47,7 +46,7 @@ const Index = () => {
     },
   ];
 
-  const clientJourney = [
+const clientJourney = [
     {
       step: "01",
       title: "Consultation & Event Profiling",
@@ -75,7 +74,7 @@ const Index = () => {
     },
   ];
 
-  const testimonials = [
+const testimonials = [
     {
       name: "Sarah Nakato",
       role: "Bride, Kampala",
@@ -93,7 +92,7 @@ const Index = () => {
     },
   ];
 
-  const trustedVenues = [
+const trustedVenues = [
     "Serena Hotel",
     "Kampala Sheraton",
     "Lake Victoria",
@@ -101,9 +100,13 @@ const Index = () => {
     "Speke Resort",
   ];
 
+const Index = () => {
+  const { isFormOpen, closeForm } = useVisitorRegistration();
+
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
+      <VisitorRegistrationForm isOpen={isFormOpen} onClose={closeForm} />
 
       {/* Cinematic Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
