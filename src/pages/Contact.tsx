@@ -8,7 +8,15 @@ import { Mail, Phone, MapPin, Send } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { useToast } from "@/hooks/use-toast";
+import { z } from "zod";
 import galleryVestBack from "@/assets/gallery-vest-back.jpg";
+
+const contactSchema = z.object({
+  name: z.string().trim().min(1, "Name is required").max(100, "Name must be less than 100 characters"),
+  email: z.string().trim().email("Invalid email address").max(255, "Email must be less than 255 characters"),
+  subject: z.string().trim().min(1, "Subject is required").max(200, "Subject must be less than 200 characters"),
+  message: z.string().trim().min(1, "Message is required").max(2000, "Message must be less than 2000 characters"),
+});
 
 const Contact = () => {
   const { toast } = useToast();
@@ -22,19 +30,32 @@ const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Create mailto link
-    const mailtoLink = `mailto:matamabrenda@gmail.com,kobusingbarbara89@gmail.com?subject=${encodeURIComponent(
-      formData.subject
-    )}&body=${encodeURIComponent(
-      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
-    )}`;
-    
-    window.location.href = mailtoLink;
+    try {
+      const validatedData = contactSchema.parse(formData);
+      
+      // Create mailto link with validated data
+      const mailtoLink = `mailto:matamabrenda@gmail.com,kobusingbarbara89@gmail.com?subject=${encodeURIComponent(
+        validatedData.subject
+      )}&body=${encodeURIComponent(
+        `Name: ${validatedData.name}\nEmail: ${validatedData.email}\n\nMessage:\n${validatedData.message}`
+      )}`;
+      
+      window.location.href = mailtoLink;
 
-    toast({
-      title: "Opening Email Client",
-      description: "Your message is ready to send.",
-    });
+      toast({
+        title: "Opening Email Client",
+        description: "Your message is ready to send.",
+      });
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        const firstError = error.errors[0];
+        toast({
+          title: "Validation Error",
+          description: firstError.message,
+          variant: "destructive",
+        });
+      }
+    }
   };
 
   const handleChange = (field: string, value: string) => {
