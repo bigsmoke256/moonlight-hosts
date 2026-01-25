@@ -47,6 +47,9 @@ const VisitorRegistrationForm = ({ isOpen, onClose }: VisitorRegistrationFormPro
     reason_for_visit: "",
     event_date: undefined as Date | undefined,
   });
+  
+  // Honeypot field for bot detection - should remain empty
+  const [honeypot, setHoneypot] = useState("");
 
   const handleChange = (field: string, value: string | Date | undefined) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
@@ -54,6 +57,18 @@ const VisitorRegistrationForm = ({ isOpen, onClose }: VisitorRegistrationFormPro
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Bot detection: if honeypot field is filled, silently reject
+    if (honeypot) {
+      // Fake success for bots - don't reveal detection
+      toast({
+        title: "Thank you! ✨",
+        description: "We've received your details. We'll be in touch soon!",
+      });
+      onClose();
+      return;
+    }
+    
     setIsSubmitting(true);
 
     try {
@@ -150,6 +165,24 @@ const VisitorRegistrationForm = ({ isOpen, onClose }: VisitorRegistrationFormPro
 
         {/* Form */}
         <form onSubmit={handleSubmit} className="p-6 space-y-4">
+          {/* Honeypot field - hidden from users, catches bots */}
+          <div 
+            className="absolute left-[-9999px] top-[-9999px]" 
+            aria-hidden="true"
+            tabIndex={-1}
+          >
+            <label htmlFor="website_url">Website (leave empty)</label>
+            <input
+              type="text"
+              id="website_url"
+              name="website_url"
+              autoComplete="off"
+              tabIndex={-1}
+              value={honeypot}
+              onChange={(e) => setHoneypot(e.target.value)}
+            />
+          </div>
+          
           <div className="space-y-2">
             <Label htmlFor="full_name">Full Name *</Label>
             <Input
