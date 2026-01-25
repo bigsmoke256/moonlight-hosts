@@ -12,9 +12,19 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
-import { LogOut, Download, RefreshCw, Calendar, User, Mail, FileText } from "lucide-react";
+import { LogOut, Download, RefreshCw, Calendar, User, Mail, FileText, Circle } from "lucide-react";
 import { format } from "date-fns";
+import type { Database } from "@/integrations/supabase/types";
+
+type RegistrationStatus = Database["public"]["Enums"]["registration_status"];
 
 type VisitorRegistration = {
   id: string;
@@ -23,6 +33,7 @@ type VisitorRegistration = {
   reason_for_visit: string;
   event_date: string | null;
   created_at: string;
+  status: RegistrationStatus;
 };
 
 const reasonLabels: Record<string, string> = {
@@ -30,6 +41,18 @@ const reasonLabels: Record<string, string> = {
   general_inquiry: "General Inquiry",
   partnership_jobs: "Partnership / Jobs",
   just_browsing: "Just Browsing",
+};
+
+const statusColors: Record<RegistrationStatus, string> = {
+  new: "text-blue-500",
+  contacted: "text-amber-500",
+  converted: "text-green-500",
+};
+
+const statusLabels: Record<RegistrationStatus, string> = {
+  new: "New",
+  contacted: "Contacted",
+  converted: "Converted",
 };
 
 const Admin = () => {
@@ -41,6 +64,7 @@ const Admin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isLoggingIn, setIsLoggingIn] = useState(false);
+  const [updatingStatus, setUpdatingStatus] = useState<string | null>(null);
 
   // Check authentication status
   useEffect(() => {
@@ -88,6 +112,36 @@ const Admin = () => {
     }
   };
 
+  const updateStatus = async (id: string, newStatus: RegistrationStatus) => {
+    setUpdatingStatus(id);
+    
+    const { error } = await supabase
+      .from("visitor_registrations")
+      .update({ status: newStatus })
+      .eq("id", id);
+
+    if (error) {
+      console.error("Error updating status:", error);
+      toast({
+        title: "Update Failed",
+        description: "Could not update the registration status.",
+        variant: "destructive",
+      });
+    } else {
+      setRegistrations(prev =>
+        prev.map(reg =>
+          reg.id === id ? { ...reg, status: newStatus } : reg
+        )
+      );
+      toast({
+        title: "Status Updated",
+        description: `Registration marked as ${statusLabels[newStatus]}.`,
+      });
+    }
+    
+    setUpdatingStatus(null);
+  };
+
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoggingIn(true);
@@ -131,11 +185,12 @@ const Admin = () => {
       return;
     }
 
-    const headers = ["Name", "Contact", "Reason", "Event Date", "Registered At"];
+    const headers = ["Name", "Contact", "Reason", "Status", "Event Date", "Registered At"];
     const rows = registrations.map((r) => [
       r.full_name,
       r.contact_info,
       reasonLabels[r.reason_for_visit] || r.reason_for_visit,
+      statusLabels[r.status] || r.status,
       r.event_date || "-",
       format(new Date(r.created_at), "PPP p"),
     ]);
@@ -290,6 +345,7 @@ const Admin = () => {
                     </div>
                   </TableHead>
                   <TableHead>Reason</TableHead>
+                  <TableHead>Status</TableHead>
                   <TableHead>
                     <div className="flex items-center gap-2">
                       <Calendar className="w-4 h-4" />
@@ -308,6 +364,42 @@ const Admin = () => {
                       <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-accent/10 text-accent">
                         {reasonLabels[reg.reason_for_visit] || reg.reason_for_visit}
                       </span>
+                    </TableCell>
+                    <TableCell>
+                      <Select
+                        value={reg.status}
+                        onValueChange={(value: RegistrationStatus) => updateStatus(reg.id, value)}
+                        disabled={updatingStatus === reg.id}
+                      >
+                        <SelectTrigger className="w-[130px] h-8">
+                          <SelectValue>
+                            <div className="flex items-center gap-2">
+                              <Circle className={`w-2 h-2 fill-current ${statusColors[reg.status]}`} />
+                              <span>{statusLabels[reg.status]}</span>
+                            </div>
+                          </SelectValue>
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="new">
+                            <div className="flex items-center gap-2">
+                              <Circle className="w-2 h-2 fill-current text-blue-500" />
+                              New
+                            </div>
+                          </SelectItem>
+                          <SelectItem value="contacted">
+                            <div className="flex items-center gap-2">
+                              <Circle className="w-2 h-2 fill-current text-amber-500" />
+                              Contacted
+                            </div>
+                          </SelectItem>
+                          <SelectItem value="converted">
+                            <div className="flex items-center gap-2">
+                              <Circle className="w-2 h-2 fill-current text-green-500" />
+                              Converted
+                            </div>
+                          </SelectItem>
+                        </SelectContent>
+                      </Select>
                     </TableCell>
                     <TableCell>
                       {reg.event_date ? format(new Date(reg.event_date), "PPP") : "-"}
