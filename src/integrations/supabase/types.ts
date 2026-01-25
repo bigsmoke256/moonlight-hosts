@@ -43,6 +43,7 @@ export type Database = {
           full_name: string
           id: string
           reason_for_visit: Database["public"]["Enums"]["visit_reason"]
+          status: Database["public"]["Enums"]["registration_status"]
         }
         Insert: {
           contact_info: string
@@ -51,6 +52,7 @@ export type Database = {
           full_name: string
           id?: string
           reason_for_visit: Database["public"]["Enums"]["visit_reason"]
+          status?: Database["public"]["Enums"]["registration_status"]
         }
         Update: {
           contact_info?: string
@@ -59,6 +61,7 @@ export type Database = {
           full_name?: string
           id?: string
           reason_for_visit?: Database["public"]["Enums"]["visit_reason"]
+          status?: Database["public"]["Enums"]["registration_status"]
         }
         Relationships: []
       }
@@ -77,6 +80,7 @@ export type Database = {
     }
     Enums: {
       app_role: "admin" | "user"
+      registration_status: "new" | "contacted" | "converted"
       visit_reason:
         | "booking_inquiry"
         | "general_inquiry"
@@ -210,6 +214,7 @@ export const Constants = {
   public: {
     Enums: {
       app_role: ["admin", "user"],
+      registration_status: ["new", "contacted", "converted"],
       visit_reason: [
         "booking_inquiry",
         "general_inquiry",
