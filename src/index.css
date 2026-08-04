@@ -252,6 +252,101 @@
     will-change: transform;
     transition: transform 0.1s linear;
   }
+
+  /* ---- 3D glossy layer ---- */
+  .perspective-deep {
+    perspective: 1400px;
+  }
+
+  .tilt-3d {
+    transform-style: preserve-3d;
+    transform: rotateY(-9deg) rotateX(4deg);
+    transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.7s ease;
+    box-shadow:
+      0 40px 80px -30px hsl(0 0% 0% / 0.9),
+      0 0 60px -20px hsl(43 50% 50% / 0.25);
+  }
+
+  .tilt-3d:hover {
+    transform: rotateY(0deg) rotateX(0deg) translateY(-6px) scale(1.01);
+  }
+
+  /* Frosted, light-catching surface used for cards, frames and controls */
+  .glass-glossy {
+    background:
+      linear-gradient(145deg, hsl(0 0% 100% / 0.09) 0%, hsl(0 0% 100% / 0.02) 45%, hsl(0 0% 0% / 0.25) 100%);
+    border: 1px solid hsl(43 50% 60% / 0.22);
+    backdrop-filter: blur(14px);
+    box-shadow:
+      inset 0 1px 0 hsl(0 0% 100% / 0.18),
+      inset 0 -1px 0 hsl(0 0% 0% / 0.5),
+      0 20px 50px -25px hsl(0 0% 0% / 0.85);
+  }
+
+  /* Diagonal specular streak overlaid on media */
+  .gloss-sheen {
+    background: linear-gradient(
+      115deg,
+      hsl(0 0% 100% / 0.16) 0%,
+      hsl(0 0% 100% / 0.03) 22%,
+      transparent 45%,
+      transparent 70%,
+      hsl(43 60% 70% / 0.08) 100%
+    );
+  }
+
+  /* Ambient gold glow behind glossy sections */
+  .glossy-aura {
+    background:
+      radial-gradient(60% 50% at 20% 30%, hsl(43 50% 50% / 0.10) 0%, transparent 70%),
+      radial-gradient(50% 40% at 85% 75%, hsl(43 60% 65% / 0.07) 0%, transparent 70%);
+  }
+
+  /* Raised, light-reflecting card treatment */
+  .card-3d {
+    background:
+      linear-gradient(160deg, hsl(0 0% 100% / 0.06) 0%, hsl(0 0% 100% / 0.01) 40%, hsl(0 0% 0% / 0.2) 100%),
+      hsl(var(--card));
+    border: 1px solid hsl(43 50% 60% / 0.16);
+    box-shadow:
+      inset 0 1px 0 hsl(0 0% 100% / 0.12),
+      0 24px 45px -28px hsl(0 0% 0% / 0.9);
+    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.5s ease, border-color 0.5s ease;
+  }
+
+  .card-3d:hover {
+    transform: translateY(-8px) scale(1.015);
+    border-color: hsl(43 50% 60% / 0.4);
+    box-shadow:
+      inset 0 1px 0 hsl(0 0% 100% / 0.2),
+      0 35px 60px -25px hsl(0 0% 0% / 0.95),
+      0 0 50px -18px hsl(43 50% 50% / 0.3);
+  }
+
+  /* Glossy gold button */
+  .btn-glossy {
+    background: linear-gradient(160deg, hsl(43 65% 62%) 0%, hsl(43 50% 45%) 55%, hsl(43 45% 38%) 100%);
+    box-shadow:
+      inset 0 1px 0 hsl(45 80% 85% / 0.55),
+      inset 0 -2px 4px hsl(30 60% 20% / 0.4),
+      0 14px 30px -14px hsl(43 50% 50% / 0.55);
+    transition: var(--transition-smooth);
+  }
+
+  .btn-glossy:hover {
+    filter: brightness(1.07);
+    transform: translateY(-2px);
+  }
+
+  /* Logo lift with gold bloom */
+  .logo-3d {
+    filter: drop-shadow(0 10px 18px hsl(0 0% 0% / 0.6)) drop-shadow(0 0 22px hsl(43 55% 50% / 0.3));
+    transition: var(--transition-elegant);
+  }
+
+  .logo-3d:hover {
+    transform: translateY(-3px) scale(1.03);
+  }
 }
 
 @keyframes revealUp {

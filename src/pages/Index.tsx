@@ -12,6 +12,7 @@ import {
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import VisitorRegistrationForm from "@/components/VisitorRegistrationForm";
+import ShowreelSection from "@/components/ShowreelSection";
 import { useVisitorRegistration } from "@/hooks/useVisitorRegistration";
 import heroImage from "@/assets/hero-image.jpg";
 import galleryTeamFull from "@/assets/gallery-team-full.jpg";
@@ -139,7 +140,7 @@ const Index = () => {
               <Link to="/book">
                 <Button
                   size="lg"
-                  className="bg-accent hover:bg-accent/90 text-accent-foreground font-medium px-8 py-6 text-base tracking-wide"
+                  className="btn-glossy text-accent-foreground font-medium px-8 py-6 text-base tracking-wide"
                 >
                   Request Our Team
                   <ArrowRight className="ml-2 w-4 h-4" />
@@ -167,6 +168,7 @@ const Index = () => {
       {/* The Moonlight Standard */}
       <section className="section-padding bg-background relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-muted/30 to-transparent" />
+        <div className="absolute inset-0 glossy-aura" />
         
         <div className="editorial-container relative">
           <div className="text-center mb-16 md:mb-24 animate-fade-in">
@@ -183,7 +185,7 @@ const Index = () => {
             {moonlightStandards.map((standard, index) => (
               <div
                 key={index}
-                className="group p-8 bg-card luxury-border hover-lift text-center animate-fade-in"
+                className="group p-8 card-3d text-center animate-fade-in"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="w-14 h-14 mx-auto mb-6 flex items-center justify-center border border-accent/30 text-accent group-hover:bg-accent group-hover:text-accent-foreground transition-all duration-500">
@@ -200,6 +202,8 @@ const Index = () => {
       </section>
 
       {/* Editorial Image Section */}
+      <ShowreelSection />
+
       <section className="relative h-[70vh] overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
@@ -244,7 +248,7 @@ const Index = () => {
                 >
                   {/* Content */}
                   <div className={`${index % 2 === 0 ? "lg:text-right lg:pr-16" : "lg:col-start-2 lg:pl-16"}`}>
-                    <div className="bg-card p-8 luxury-border hover-lift">
+                    <div className="card-3d p-8">
                       <span className="text-accent font-heading text-4xl font-semibold">{step.step}</span>
                       <h3 className="font-heading font-semibold text-xl mt-4 mb-3">{step.title}</h3>
                       <p className="text-muted-foreground font-light">{step.description}</p>
@@ -328,7 +332,7 @@ const Index = () => {
             {testimonials.map((testimonial, index) => (
               <div
                 key={index}
-                className="bg-card p-8 luxury-border hover-lift animate-fade-in"
+                className="card-3d p-8 animate-fade-in"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <MessageSquareQuote className="w-8 h-8 text-accent/50 mb-6" />
@@ -390,7 +394,7 @@ const Index = () => {
               <Link to="/book">
                 <Button
                   size="lg"
-                  className="bg-accent hover:bg-accent/90 text-accent-foreground px-10 py-6 text-base"
+                  className="btn-glossy text-accent-foreground px-10 py-6 text-base"
                 >
                   Request Our Team
                 </Button>

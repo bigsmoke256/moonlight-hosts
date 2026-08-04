@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin, Instagram, MessageCircle } from "lucide-react";
+import logo from "@/assets/moonlight-logo.png.asset.json";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -11,10 +12,8 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <Link to="/" className="inline-block mb-6">
-              <h3 className="text-2xl font-heading font-semibold">
-                <span className="text-accent">Moon</span>light Hosts
-              </h3>
+            <Link to="/" className="inline-block mb-6" aria-label="Moonlight Hosts home">
+              <img src={logo.url} alt="Moonlight Hosts" className="h-16 w-auto logo-3d" />
             </Link>
             <p className="text-muted-foreground text-sm font-light leading-relaxed mb-6">
               Where presence becomes performance. Elite hospitality for events that demand excellence.
