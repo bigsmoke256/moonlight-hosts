@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "./ui/button";
+import logo from "@/assets/moonlight-logo.png.asset.json";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -24,11 +25,8 @@ const Navigation = () => {
       <div className="editorial-container">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center">
-            <div className="font-heading text-xl font-semibold tracking-tight">
-              <span className="text-accent">Moon</span>
-              <span className="text-foreground">light</span>
-            </div>
+          <Link to="/" className="flex items-center" aria-label="Moonlight Hosts home">
+            <img src={logo.url} alt="Moonlight Hosts" className="h-12 md:h-14 w-auto logo-3d" />
           </Link>
 
           {/* Desktop Navigation */}
@@ -50,9 +48,9 @@ const Navigation = () => {
               </Link>
             ))}
             <Link to="/book">
-              <Button 
+              <Button
                 size="sm"
-                className="bg-accent hover:bg-accent/90 text-accent-foreground font-normal text-sm px-6"
+                className="btn-glossy text-accent-foreground font-normal text-sm px-6"
               >
                 Request Team
               </Button>
