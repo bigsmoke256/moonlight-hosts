@@ -11,9 +11,9 @@ import {
 } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import galleryFormalSuits from "@/assets/gallery-formal-suits.jpg";
-import galleryBlackUniforms from "@/assets/gallery-black-uniforms.jpg";
-import galleryMixedFormal from "@/assets/gallery-mixed-formal.jpg";
+import guestUmbrella from "@/assets/moonlight-guest-umbrella.jpg.asset.json";
+import guestAssistance from "@/assets/moonlight-guest-assistance.jpg.asset.json";
+import diningService from "@/assets/moonlight-dining-service.jpg.asset.json";
 
 const VIPEvents = () => {
   const features = [
@@ -56,7 +56,7 @@ const VIPEvents = () => {
       <section className="relative h-[80vh] flex items-center justify-center overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${galleryFormalSuits})` }}
+          style={{ backgroundImage: `url(${guestUmbrella.url})` }}
         />
         <div className="absolute inset-0 overlay-cinematic" />
         
@@ -110,7 +110,7 @@ const VIPEvents = () => {
       <section className="relative h-[60vh] overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${galleryBlackUniforms})` }}
+          style={{ backgroundImage: `url(${guestAssistance.url})` }}
         />
         <div className="absolute inset-0 overlay-editorial" />
         <div className="absolute inset-0 flex items-center justify-center">
@@ -149,8 +149,8 @@ const VIPEvents = () => {
             <div className="relative animate-fade-in" style={{ animationDelay: "0.3s" }}>
               <div className="aspect-[4/5] overflow-hidden luxury-border">
                 <img
-                  src={galleryMixedFormal}
-                  alt="VIP Event Team"
+                  src={diningService.url}
+                  alt="Moonlight host providing attentive private dining service"
                   className="w-full h-full object-cover"
                 />
               </div>

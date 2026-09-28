@@ -2,29 +2,31 @@ import { useState } from "react";
 import { X } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import galleryTeamFull from "@/assets/gallery-team-full.jpg";
-import galleryServiceTrays from "@/assets/gallery-service-trays.jpg";
-import galleryVestBack from "@/assets/gallery-vest-back.jpg";
-import galleryRedVests from "@/assets/gallery-red-vests.jpg";
-import galleryRedDresses from "@/assets/gallery-red-dresses.jpg";
-import galleryFormalSuits from "@/assets/gallery-formal-suits.jpg";
-import galleryMixedFormal from "@/assets/gallery-mixed-formal.jpg";
-import galleryBlackUniforms from "@/assets/gallery-black-uniforms.jpg";
-import galleryTeamSix from "@/assets/gallery-team-six.jpg";
+import teamSage from "@/assets/moonlight-team-sage.jpg.asset.json";
+import tableService from "@/assets/moonlight-table-service.jpg.asset.json";
+import drinksService from "@/assets/moonlight-drinks-service.jpg.asset.json";
+import guestUmbrella from "@/assets/moonlight-guest-umbrella.jpg.asset.json";
+import barService from "@/assets/moonlight-bar-service.jpg.asset.json";
+import menuService from "@/assets/moonlight-menu-service.jpg.asset.json";
+import guestAssistance from "@/assets/moonlight-guest-assistance.jpg.asset.json";
+import floorService from "@/assets/moonlight-floor-service.jpg.asset.json";
+import trayService from "@/assets/moonlight-tray-service.jpg.asset.json";
+import diningService from "@/assets/moonlight-dining-service.jpg.asset.json";
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<{ src: string; title: string } | null>(null);
 
   const images = [
-    { src: galleryTeamFull, title: "Elite Team", caption: "The Moonlight Standard" },
-    { src: galleryServiceTrays, title: "Service Excellence", caption: "Precision in Motion" },
-    { src: galleryVestBack, title: "Graceful Presence", caption: "Where Elegance Begins" },
-    { src: galleryRedVests, title: "Corporate Precision", caption: "Executive Hospitality" },
-    { src: galleryRedDresses, title: "Wedding Poise", caption: "Timeless Elegance" },
-    { src: galleryFormalSuits, title: "VIP Protocol", caption: "Discreet Excellence" },
-    { src: galleryMixedFormal, title: "Team Unity", caption: "Collective Perfection" },
-    { src: galleryBlackUniforms, title: "Classic Standards", caption: "Refined Professionalism" },
-    { src: galleryTeamSix, title: "Event Ready", caption: "Prepared for Excellence" },
+    { src: teamSage.url, title: "The Moonlight Team", caption: "Grace in Formation" },
+    { src: tableService.url, title: "Attentive Service", caption: "Guests Come First" },
+    { src: guestUmbrella.url, title: "Personal Care", caption: "Thoughtful Hospitality" },
+    { src: drinksService.url, title: "Refreshment Service", caption: "Precision in Motion" },
+    { src: guestAssistance.url, title: "Guest Assistance", caption: "Present and Prepared" },
+    { src: barService.url, title: "Bar Service", caption: "Composed Under Pressure" },
+    { src: floorService.url, title: "Floor Service", caption: "Effortless Coordination" },
+    { src: trayService.url, title: "Table Presentation", caption: "Every Detail Matters" },
+    { src: diningService.url, title: "Dining Service", caption: "Refined Attention" },
+    { src: menuService.url, title: "Menu Guidance", caption: "Warm, Clear Service" },
   ];
 
   return (
@@ -58,16 +60,16 @@ const Gallery = () => {
                 key={index}
                 onClick={() => setSelectedImage(image)}
                 className="group relative cursor-pointer overflow-hidden animate-fade-in"
-                style={{ 
+                  style={{
                   animationDelay: `${index * 0.05}s`,
-                  aspectRatio: index === 0 || index === 4 ? '4/5' : '3/4'
+                    aspectRatio: index === 0 || index === 5 ? "4/5" : "3/4",
                 }}
               >
                 {/* Image with B&W filter */}
                 <img
                   src={image.src}
                   alt={image.title}
-                  className="w-full h-full object-cover filter-editorial transition-all duration-700 group-hover:scale-105"
+                  className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
                 />
                 
                 {/* Gold overlay on hover */}

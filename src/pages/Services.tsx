@@ -14,13 +14,14 @@ import {
 } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import galleryServiceTrays from "@/assets/gallery-service-trays.jpg";
 import galleryFormalSuits from "@/assets/gallery-formal-suits.jpg";
-import galleryBlackUniforms from "@/assets/gallery-black-uniforms.jpg";
-import galleryRedVests from "@/assets/gallery-red-vests.jpg";
-import galleryRedDresses from "@/assets/gallery-red-dresses.jpg";
 import galleryMixedFormal from "@/assets/gallery-mixed-formal.jpg";
-import galleryTeamFull from "@/assets/gallery-team-full.jpg";
+import teamSage from "@/assets/moonlight-team-sage.jpg.asset.json";
+import tableService from "@/assets/moonlight-table-service.jpg.asset.json";
+import drinksService from "@/assets/moonlight-drinks-service.jpg.asset.json";
+import guestUmbrella from "@/assets/moonlight-guest-umbrella.jpg.asset.json";
+import menuService from "@/assets/moonlight-menu-service.jpg.asset.json";
+import diningService from "@/assets/moonlight-dining-service.jpg.asset.json";
 
 const Services = () => {
   const services = [
@@ -29,35 +30,35 @@ const Services = () => {
       title: "Wedding Ceremonies",
       tagline: "Timeless Elegance",
       description: "Where love meets perfection. Our hosts ensure every moment flows with grace and every guest feels the magic.",
-      image: galleryServiceTrays,
+      image: tableService.url,
     },
     {
       icon: <Briefcase className="w-6 h-6" />,
       title: "Corporate Events",
       tagline: "Executive Precision",
       description: "Polished professionalism that reflects your brand. Conferences, galas, and business gatherings elevated.",
-      image: galleryFormalSuits,
+      image: guestUmbrella.url,
     },
     {
       icon: <Heart className="w-6 h-6" />,
       title: "Introduction / Kukyala",
       tagline: "Cultural Heritage",
       description: "Traditional ceremonies handled with deep cultural respect and contemporary sophistication.",
-      image: galleryRedVests,
+      image: drinksService.url,
     },
     {
       icon: <Cake className="w-6 h-6" />,
       title: "Birthday Celebrations",
       tagline: "Joyful Moments",
       description: "From intimate gatherings to grand celebrations, we bring warmth and elegance to every milestone.",
-      image: galleryBlackUniforms,
+      image: menuService.url,
     },
     {
       icon: <Award className="w-6 h-6" />,
       title: "Dinners & Awards",
       tagline: "Refined Glamour",
       description: "Formal occasions demand exceptional service. We deliver sophistication that matches the prestige.",
-      image: galleryRedDresses,
+      image: diningService.url,
     },
     {
       icon: <Music className="w-6 h-6" />,
@@ -191,8 +192,8 @@ const Services = () => {
             <div className="relative animate-fade-in" style={{ animationDelay: "0.3s" }}>
               <div className="aspect-square overflow-hidden luxury-border">
                 <img
-                  src={galleryTeamFull}
-                  alt="Moonlight Hosts Team"
+                  src={teamSage.url}
+                  alt="Moonlight Hosts team in coordinated sage green uniforms"
                   className="w-full h-full object-cover"
                 />
               </div>
