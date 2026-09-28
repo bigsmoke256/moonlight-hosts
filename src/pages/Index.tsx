@@ -14,7 +14,7 @@ import Footer from "@/components/Footer";
 import VisitorRegistrationForm from "@/components/VisitorRegistrationForm";
 import ShowreelSection from "@/components/ShowreelSection";
 import { useVisitorRegistration } from "@/hooks/useVisitorRegistration";
-import heroImage from "@/assets/hero-image.jpg";
+import heroImage from "@/assets/gallery-team-full.jpg";
 import galleryFormalSuits from "@/assets/gallery-formal-suits.jpg";
 import teamSage from "@/assets/moonlight-team-sage.jpg.asset.json";
 import guestUmbrella from "@/assets/moonlight-guest-umbrella.jpg.asset.json";
