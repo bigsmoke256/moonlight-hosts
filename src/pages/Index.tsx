@@ -18,6 +18,9 @@ import heroImage from "@/assets/hero-image.jpg";
 import galleryTeamFull from "@/assets/gallery-team-full.jpg";
 import galleryRedVests from "@/assets/gallery-red-vests.jpg";
 import galleryFormalSuits from "@/assets/gallery-formal-suits.jpg";
+import teamSage from "@/assets/moonlight-team-sage.jpg.asset.json";
+import guestUmbrella from "@/assets/moonlight-guest-umbrella.jpg.asset.json";
+import trayService from "@/assets/moonlight-tray-service.jpg.asset.json";
 
 const moonlightStandards = [
     {
@@ -207,7 +210,7 @@ const Index = () => {
       <section className="relative h-[70vh] overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${galleryTeamFull})` }}
+          style={{ backgroundImage: `url(${teamSage.url})` }}
         />
         <div className="absolute inset-0 overlay-editorial" />
         <div className="absolute inset-0 flex items-center justify-center">
@@ -276,9 +279,9 @@ const Index = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              { image: galleryRedVests, title: "Wedding Ceremonies", caption: "Timeless Elegance" },
+              { image: trayService.url, title: "Wedding Ceremonies", caption: "Timeless Elegance" },
               { image: galleryFormalSuits, title: "Corporate Events", caption: "Executive Precision" },
-              { image: galleryTeamFull, title: "VIP & Private Events", caption: "Discreet Excellence" },
+              { image: guestUmbrella.url, title: "VIP & Private Events", caption: "Discreet Excellence" },
             ].map((service, index) => (
               <Link
                 key={index}

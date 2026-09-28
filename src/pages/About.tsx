@@ -6,6 +6,8 @@ import galleryTeamFull from "@/assets/gallery-team-full.jpg";
 import galleryRedVests from "@/assets/gallery-red-vests.jpg";
 import galleryRedDresses from "@/assets/gallery-red-dresses.jpg";
 import galleryMixedFormal from "@/assets/gallery-mixed-formal.jpg";
+import teamSage from "@/assets/moonlight-team-sage.jpg.asset.json";
+import tableService from "@/assets/moonlight-table-service.jpg.asset.json";
 
 const About = () => {
   const values = [
@@ -50,8 +52,8 @@ const About = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="animate-fade-in">
               <img
-                src={galleryTeamFull}
-                alt="Moonlight Hosts Team"
+                src={teamSage.url}
+                alt="Moonlight Hosts team in sage green uniforms"
                 className="rounded-lg shadow-2xl w-full h-auto"
               />
             </div>
@@ -128,8 +130,8 @@ const About = () => {
             <Card className="luxury-border hover-lift animate-fade-in overflow-hidden">
               <CardContent className="p-0">
                 <img
-                  src={galleryRedVests}
-                  alt="Moonlight Hosts Red Vests Team"
+                  src={tableService.url}
+                  alt="Moonlight host assisting guests at their table"
                   className="w-full h-auto"
                 />
               </CardContent>
