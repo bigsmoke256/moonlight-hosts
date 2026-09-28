@@ -11,9 +11,6 @@ import {
 } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import galleryFormalSuits from "@/assets/gallery-formal-suits.jpg";
-import galleryBlackUniforms from "@/assets/gallery-black-uniforms.jpg";
-import galleryMixedFormal from "@/assets/gallery-mixed-formal.jpg";
 import guestUmbrella from "@/assets/moonlight-guest-umbrella.jpg.asset.json";
 import guestAssistance from "@/assets/moonlight-guest-assistance.jpg.asset.json";
 import diningService from "@/assets/moonlight-dining-service.jpg.asset.json";

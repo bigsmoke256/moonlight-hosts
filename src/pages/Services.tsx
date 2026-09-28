@@ -14,13 +14,8 @@ import {
 } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import galleryServiceTrays from "@/assets/gallery-service-trays.jpg";
 import galleryFormalSuits from "@/assets/gallery-formal-suits.jpg";
-import galleryBlackUniforms from "@/assets/gallery-black-uniforms.jpg";
-import galleryRedVests from "@/assets/gallery-red-vests.jpg";
-import galleryRedDresses from "@/assets/gallery-red-dresses.jpg";
 import galleryMixedFormal from "@/assets/gallery-mixed-formal.jpg";
-import galleryTeamFull from "@/assets/gallery-team-full.jpg";
 import teamSage from "@/assets/moonlight-team-sage.jpg.asset.json";
 import tableService from "@/assets/moonlight-table-service.jpg.asset.json";
 import drinksService from "@/assets/moonlight-drinks-service.jpg.asset.json";

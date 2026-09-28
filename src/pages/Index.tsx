@@ -15,8 +15,6 @@ import VisitorRegistrationForm from "@/components/VisitorRegistrationForm";
 import ShowreelSection from "@/components/ShowreelSection";
 import { useVisitorRegistration } from "@/hooks/useVisitorRegistration";
 import heroImage from "@/assets/hero-image.jpg";
-import galleryTeamFull from "@/assets/gallery-team-full.jpg";
-import galleryRedVests from "@/assets/gallery-red-vests.jpg";
 import galleryFormalSuits from "@/assets/gallery-formal-suits.jpg";
 import teamSage from "@/assets/moonlight-team-sage.jpg.asset.json";
 import guestUmbrella from "@/assets/moonlight-guest-umbrella.jpg.asset.json";

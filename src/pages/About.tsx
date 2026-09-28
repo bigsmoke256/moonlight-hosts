@@ -2,8 +2,6 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Target, Eye, Award } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import galleryTeamFull from "@/assets/gallery-team-full.jpg";
-import galleryRedVests from "@/assets/gallery-red-vests.jpg";
 import galleryRedDresses from "@/assets/gallery-red-dresses.jpg";
 import galleryMixedFormal from "@/assets/gallery-mixed-formal.jpg";
 import teamSage from "@/assets/moonlight-team-sage.jpg.asset.json";
